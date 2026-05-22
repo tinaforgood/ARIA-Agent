@@ -28,6 +28,7 @@ env/
 .env
 .env.local
 .env.*.local
+mr_approval_agent/setup_env.sh
 
 # ==============================
 # 编译 / 构建产物
