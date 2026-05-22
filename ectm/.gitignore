@@ -1,0 +1,24 @@
+# 医疗采购原始文档防泄漏屏障
+dataset_test/raw_data/*
+!dataset_test/raw_data/.gitkeep
+
+mineru_pipeline_test/raw/*
+!mineru_pipeline_test/raw/.gitkeep
+
+# 中间产物（可重跑生成）
+mineru_pipeline_test/result/*.md
+mineru_pipeline_test/output/prediction.csv
+mineru_pipeline_test/output/conflict_prediction.csv
+
+# 仲裁表（含分歧内容，不入库）
+cohens_kappa_test/discrepancies_for_arbitration.csv
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# macOS
+.DS_Store

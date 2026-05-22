@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-05-13 14:22:42",
+  "parser_mode": "mineru",
+  "categories": {
+    "a_requirements": [
+      {
+        "file": "50万元及以上医学装备可行性论证报告.docx",
+        "category": "a_requirements",
+        "origin_type": "agent_corpus",
+        "doc_category": "a_requirements",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+        "category": "a_requirements",
+        "origin_type": "agent_corpus",
+        "doc_category": "a_requirements",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "3.0T磁共振配置可行性报告.docx",
+        "category": "a_requirements",
+        "origin_type": "agent_corpus",
+        "doc_category": "a_requirements",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "50万元以上大型医疗设备预算申请表（含可行性报告1）.docx",
+        "category": "a_requirements",
+        "origin_type": "agent_corpus",
+        "doc_category": "a_requirements",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "50万元及以上医学装备可行性论证报告.docx",
+        "category": "a_requirements",
+        "origin_type": "user_upload",
+        "doc_category": "a_requirements",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+        "category": "a_requirements",
+        "origin_type": "user_upload",
+        "doc_category": "a_requirements",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      }
+    ],
+    "b_competitors": [
+      {
+        "file": "飞利浦Elition S医用磁共振成像系统-申报材料.docx",
+        "category": "b_competitors",
+        "origin_type": "agent_corpus",
+        "doc_category": "b_competitors",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "Copy of SIGNA_Performer彩页.pptx",
+        "category": "b_competitors",
+        "origin_type": "agent_corpus",
+        "doc_category": "b_competitors",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "飞利浦Innovation  Ultra磁共振成像系统-申报材料.docx",
+        "category": "b_competitors",
+        "origin_type": "agent_corpus",
+        "doc_category": "b_competitors",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "飞利浦Innovation  Ultra磁共振成像系统-申报材料.docx",
+        "category": "b_competitors",
+        "origin_type": "user_upload",
+        "doc_category": "b_competitors",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "飞利浦Elition S医用磁共振成像系统-申报材料.docx",
+        "category": "b_competitors",
+        "origin_type": "user_upload",
+        "doc_category": "b_competitors",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      }
+    ],
+    "c_compliance": [
+      {
+        "file": "杨浦区中心医院-乙类大型设备.docx",
+        "category": "c_compliance",
+        "origin_type": "agent_corpus",
+        "doc_category": "c_compliance",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      }
+    ],
+    "d_operations": [
+      {
+        "file": "MR使用效率数据.xlsx",
+        "category": "d_operations",
+        "origin_type": "user_upload",
+        "doc_category": "d_operations",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "MR使用效率数据.xlsx",
+        "category": "d_operations",
+        "origin_type": "agent_corpus",
+        "doc_category": "d_operations",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "改-附件2上海市市级财政项目预算绩效目标申报表（新华医院）-2026.3.31.xlsx",
+        "category": "d_operations",
+        "origin_type": "agent_corpus",
+        "doc_category": "d_operations",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "MR维修记录2024-2026.xlsx",
+        "category": "d_operations",
+        "origin_type": "agent_corpus",
+        "doc_category": "d_operations",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      }
+    ],
+    "e_systems": [],
+    "f_validation": [
+      {
+        "file": "6_医学影像科新技术、新项目申报书（双源CT能谱成像肾结石成分分析）.docx",
+        "category": "f_validation",
+        "origin_type": "agent_corpus",
+        "doc_category": "f_validation",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "改-2026市级医院专业设备购置及更新（乙类）汇报（整体版）-2026.3.29.pptx",
+        "category": "f_validation",
+        "origin_type": "agent_corpus",
+        "doc_category": "f_validation",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      },
+      {
+        "file": "2026年度万元以上设备预算申报论证表-夸克CT.docx",
+        "category": "f_validation",
+        "origin_type": "agent_corpus",
+        "doc_category": "f_validation",
+        "fields": {},
+        "summary": "",
+        "confidence": null
+      }
+    ]
+  },
+  "key_params": {
+    "device_name": null,
+    "applicant_dept": null,
+    "request_qty": null,
+    "competitor_list": [],
+    "registration_certs": [],
+    "daily_utilization": null,
+    "maintenance_records": [],
+    "revenue_params": {
+      "charge_per_exam": null,
+      "monthly_volume": null,
+      "payback_period": null,
+      "charge_conflict": false,
+      "charge_per_exam_all": []
+    }
+  },
+  "excluded_non_mr": [],
+  "excluded_internal_promo": [],
+  "reference_only_competitors": [],
+  "missing_price_competitors": []
+}

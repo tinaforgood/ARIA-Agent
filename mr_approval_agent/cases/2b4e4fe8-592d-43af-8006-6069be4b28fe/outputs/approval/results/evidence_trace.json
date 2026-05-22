@@ -1,0 +1,67 @@
+[
+  {
+    "conclusion": "临床需求与立项基础",
+    "source_file": "2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+    "category": "a_requirements"
+  },
+  {
+    "conclusion": "采购合理性判定：conditional",
+    "source_file": "d_operations/MR使用效率数据.xlsx",
+    "category": "d_operations"
+  },
+  {
+    "conclusion": "竞品参数：GE医疗 SIGNA™ Performer",
+    "source_file": "Copy of SIGNA_Performer彩页.pptx",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "竞品参数：飞利浦 Ingenia Elition",
+    "source_file": "3. ElitionS 彩页.pdf",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "竞品参数：联影 uMR 870",
+    "source_file": "uMR870推荐书 2025.pdf",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "竞品参数：西门子医疗 MAGNETOM Mica",
+    "source_file": "Mica 宣传彩页.pdf",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "竞品参数：飞利浦 Innovation Ultra",
+    "source_file": "飞利浦Innovation  Ultra磁共振成像系统-申报材料.docx",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "竞品参数：飞利浦 Ingenia Elition S",
+    "source_file": "飞利浦Elition S医用磁共振成像系统-申报材料.docx",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "竞品参数：西门子医疗 MAGNETOM Lumina",
+    "source_file": "MAGNETOM Lumina领域磁共振产品推荐书-2.pdf",
+    "category": "b_competitors"
+  },
+  {
+    "conclusion": "预算测算",
+    "source_file": "budget_summary",
+    "category": "d_operations"
+  },
+  {
+    "conclusion": "收益与ROI测算",
+    "source_file": "revenue_roi",
+    "category": "d_operations"
+  },
+  {
+    "conclusion": "注册证核验：国械注准20243061435",
+    "source_file": "国械注准20243061435",
+    "category": "c_compliance"
+  },
+  {
+    "conclusion": "注册证核验：国械注准20213060603",
+    "source_file": "国械注准20213060603",
+    "category": "c_compliance"
+  }
+]

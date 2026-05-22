@@ -1,0 +1,36 @@
+{"ts": "2026-05-13T06:45:27Z", "event": "pipeline_init", "model": "qwen3-max"}
+{"ts": "2026-05-13T06:45:27Z", "event": "agent1_requirements_start"}
+{"ts": "2026-05-13T06:45:27Z", "event": "agent1_requirements_call_start", "chars": 199}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent1_requirements_call_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '8df892aa-deca-90f6-aebf-50365cd5bb11'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent1_requirements_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '8df892aa-deca-90f6-aebf-50365cd5bb11'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent2_competitor_start"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent2_competitor_call_start", "chars": 190}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent2_competitor_call_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'c590bb09-b978-96a5-9434-03eb235373fa'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent2_competitor_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'c590bb09-b978-96a5-9434-03eb235373fa'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent3_budget_start"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent3_budget_call_start", "chars": 131}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent3_budget_call_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '6c4b12ee-8f44-9fd2-a099-46123199c4c9'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent3_budget_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '6c4b12ee-8f44-9fd2-a099-46123199c4c9'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent4_revenue_start"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent4_revenue_call_start", "chars": 121}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent4_revenue_call_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '046ed3bf-259b-9d8b-8888-45bc336f9db4'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent4_revenue_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '046ed3bf-259b-9d8b-8888-45bc336f9db4'}"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent5_compliance_start"}
+{"ts": "2026-05-13T06:45:28Z", "event": "agent5_compliance_call_start", "chars": 43}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent5_compliance_call_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'b3c26add-b2e1-9ac0-8d1b-c2f78e2d71f4'}"}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent5_compliance_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'b3c26add-b2e1-9ac0-8d1b-c2f78e2d71f4'}"}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent6_document_start"}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent6_document_call_start", "chars": 233}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent6_document_call_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'cfa5e85a-172d-9aa7-900e-0ba56449eca0'}"}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent6_document_error", "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'cfa5e85a-172d-9aa7-900e-0ba56449eca0'}"}
+{"ts": "2026-05-13T06:45:29Z", "event": "agent7_feedback_start"}
+{"ts": "2026-05-13T06:45:29Z", "event": "finalize_start"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/competitor_table.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/budget_summary.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/revenue_roi.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/compliance_result.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/feedback_result.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/evidence_trace.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "artefact_saved", "file": "outputs/approval/results/task_overview.json"}
+{"ts": "2026-05-13T06:45:29Z", "event": "pdf_exported", "file": "outputs/approval/logs/approval_report_20260513_144529.pdf"}
+{"ts": "2026-05-13T06:45:29Z", "event": "finalize_done", "artefacts": "outputs/approval/results"}

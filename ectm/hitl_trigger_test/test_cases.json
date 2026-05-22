@@ -1,0 +1,259 @@
+{
+  "_comment": "ARIA HITL 触发规则测试用例集 — 对标《ARIA 综合测评报告 v2.0（修订版）》第 6.2 节",
+  "_rules": {
+    "L1": "任意必填字段置信度 < 0.60；或关键字段（设备型号/单次收费基准/注册证编号）置信度 < 0.75",
+    "L2": "文档类型对应的必填字段缺失率 > 20%（超过 1/5 必填项未获得有效输出）",
+    "L3": "数值型字段跨文档逻辑矛盾：①TCO汇总值与分项之和不符；②收费基准差异 > 5%；③关键数值字段跨文档不一致",
+    "L4": "合理性Gate（node_rationality_gate）判定：verdict=reject → 触发（合理性否决）；verdict=conditional → 触发（合理性条件通过）；pass/exempt_renewal → 不触发。基准：2025年四季度上海市级医院综合绩效简报（总第71期），市均饱和度78.84%/市均候检4.70天/市均成新率44.34%"
+  },
+
+  "L1_cases": [
+    {
+      "id": "L1-001",
+      "desc": "普通必填字段置信度低于 0.60 → 应触发",
+      "fields": [
+        {"name": "编制床位数", "is_critical": false, "confidence": 0.55, "required": true},
+        {"name": "年出院人数", "is_critical": false, "confidence": 0.82, "required": true}
+      ],
+      "expected_trigger": true,
+      "expected_level": "L1"
+    },
+    {
+      "id": "L1-002",
+      "desc": "关键字段（设备型号）置信度 0.70 < 0.75 → 应触发",
+      "fields": [
+        {"name": "设备型号",       "is_critical": true,  "confidence": 0.70, "required": true},
+        {"name": "编制床位数",     "is_critical": false, "confidence": 0.91, "required": true}
+      ],
+      "expected_trigger": true,
+      "expected_level": "L1"
+    },
+    {
+      "id": "L1-003",
+      "desc": "所有字段置信度均达标 → 不应触发",
+      "fields": [
+        {"name": "设备型号",       "is_critical": true,  "confidence": 0.88, "required": true},
+        {"name": "单次收费基准",   "is_critical": true,  "confidence": 0.92, "required": true},
+        {"name": "注册证编号",     "is_critical": true,  "confidence": 0.79, "required": true},
+        {"name": "编制床位数",     "is_critical": false, "confidence": 0.75, "required": true}
+      ],
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L1-004",
+      "desc": "DEMO-MR-2026 / CONF-005 映射：价格证明扫描件 OCR 无文字层，置信度极低 → 应触发",
+      "scene": "CONF-005",
+      "fields": [
+        {"name": "单次收费基准",   "is_critical": true,  "confidence": 0.12, "required": true},
+        {"name": "设备申请总金额", "is_critical": false, "confidence": 0.95, "required": true}
+      ],
+      "expected_trigger": true,
+      "expected_level": "L1"
+    },
+    {
+      "id": "L1-005",
+      "desc": "关键字段恰好在阈值边界（0.75）→ 不应触发",
+      "fields": [
+        {"name": "单次收费基准", "is_critical": true,  "confidence": 0.75, "required": true},
+        {"name": "编制床位数",   "is_critical": false, "confidence": 0.62, "required": true}
+      ],
+      "expected_trigger": false,
+      "expected_level": null
+    }
+  ],
+
+  "L2_cases": [
+    {
+      "id": "L2-001",
+      "desc": "10个必填字段，3个缺失，缺失率30% > 20% → 应触发",
+      "required_fields": ["医院名称","编制床位数","实际开放床位数","床位使用率","年出院人数",
+                          "年门诊量","年急诊量","卫生技术人员数","申请设备类型","申请台数合计"],
+      "missing_fields":  ["床位使用率","年急诊量","卫生技术人员数"],
+      "expected_trigger": true,
+      "expected_level": "L2"
+    },
+    {
+      "id": "L2-002",
+      "desc": "10个必填字段，2个缺失，缺失率恰好20%（非严格大于）→ 不应触发",
+      "required_fields": ["医院名称","编制床位数","实际开放床位数","床位使用率","年出院人数",
+                          "年门诊量","年急诊量","卫生技术人员数","申请设备类型","申请台数合计"],
+      "missing_fields":  ["年急诊量","卫生技术人员数"],
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L2-003",
+      "desc": "所有必填字段均有效提取 → 不应触发",
+      "required_fields": ["医院名称","编制床位数","申请设备类型","申请台数合计","论证是否通过"],
+      "missing_fields":  [],
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L2-004",
+      "desc": "DEMO-MR-2026 / CONF-005 映射：价格依据证明PDF为扫描件，全部必填字段无法提取（100% > 20%）→ 应触发",
+      "scene": "CONF-005",
+      "required_fields": ["单次收费基准","价格依据来源","证明文件日期","证明机构名称","证明文件编号"],
+      "missing_fields":  ["单次收费基准","价格依据来源","证明文件日期","证明机构名称","证明文件编号"],
+      "expected_trigger": true,
+      "expected_level": "L2"
+    },
+    {
+      "id": "L2-005",
+      "desc": "5个必填字段，1个缺失，缺失率20%（边界）→ 不应触发",
+      "required_fields": ["医院名称","申请设备类型","申请台数合计","设备品牌","设备型号"],
+      "missing_fields":  ["设备型号"],
+      "expected_trigger": false,
+      "expected_level": null
+    }
+  ],
+
+  "L3_cases": [
+    {
+      "id": "L3-001",
+      "desc": "设备申请总金额 = 单价×台数（2600万 = 1300万×2）→ 算术一致，不应触发",
+      "check_type": "tco_arithmetic",
+      "values": {
+        "unit_price_wan": 1300,
+        "quantity": 2,
+        "total_wan": 2600
+      },
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L3-002",
+      "desc": "设备申请总金额 3000万 ≠ 单价×台数 2600万（差异15.4% > 5%）→ 应触发",
+      "scene": "BUG-002（修复前）",
+      "check_type": "tco_arithmetic",
+      "values": {
+        "unit_price_wan": 1300,
+        "quantity": 2,
+        "total_wan": 3000
+      },
+      "expected_trigger": true,
+      "expected_level": "L3"
+    },
+    {
+      "id": "L3-003",
+      "desc": "收费基准跨文档差异：历史收费460元 vs 厂商测算430元，差异6.5% > 5% → 应触发",
+      "check_type": "price_discrepancy",
+      "values": {
+        "source_a": {"name": "历史收费基准", "value_yuan": 460},
+        "source_b": {"name": "厂商报价测算", "value_yuan": 430}
+      },
+      "expected_trigger": true,
+      "expected_level": "L3"
+    },
+    {
+      "id": "L3-004",
+      "desc": "收费基准跨文档差异：460元 vs 455元，差异1.1% ≤ 5% → 不应触发",
+      "check_type": "price_discrepancy",
+      "values": {
+        "source_a": {"name": "历史收费基准", "value_yuan": 460},
+        "source_b": {"name": "院内物价标准", "value_yuan": 455}
+      },
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L3-005",
+      "desc": "DEMO-MR-2026 / CONF-001 映射：徐汇MR现有台数跨文档不一致（基本情况表11台 vs 预算清单10台）→ 应触发",
+      "scene": "CONF-001",
+      "check_type": "cross_doc_count",
+      "values": {
+        "field": "现有该类设备数量（徐汇）",
+        "source_a": {"doc": "基本情况表", "value": 11},
+        "source_b": {"doc": "预算清单",   "value": 10}
+      },
+      "expected_trigger": true,
+      "expected_level": "L3"
+    },
+    {
+      "id": "L3-006",
+      "desc": "DEMO-MR-2026 / CONF-003 映射：应到人数33 vs 34，差异仅1人（3%），属容差范围 → 不应触发",
+      "scene": "CONF-003",
+      "check_type": "cross_doc_count",
+      "values": {
+        "field": "论证委员会应到人数",
+        "source_a": {"doc": "论证纪要封面", "value": 33},
+        "source_b": {"doc": "论证纪要正文", "value": 34},
+        "tolerance_pct": 5.0
+      },
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L3-007",
+      "desc": "DEMO-MR-2026 / CONF-004 映射：年门诊量495.8 vs 495.80，纯格式差异，数值完全相同 → 不应触发",
+      "scene": "CONF-004",
+      "check_type": "price_discrepancy",
+      "values": {
+        "source_a": {"name": "基本情况表",  "value_yuan": 495.80},
+        "source_b": {"name": "预算清单附注", "value_yuan": 495.8}
+      },
+      "expected_trigger": false,
+      "expected_level": null
+    }
+  ],
+
+  "L4_cases": [
+    {
+      "id": "L4-001",
+      "desc": "阳性率55% < 60%（红灯），verdict=reject → 应触发（合理性否决）",
+      "scene": "RAT-001",
+      "verdict": "reject",
+      "dimensions": {
+        "workload":      { "score": "green",  "hospital_saturation": 0.923, "note": "饱和度92.3%，≥90% 绿灯" },
+        "waiting_time":  { "score": "green",  "hospital_waiting_days": 8.2, "note": "候检8.2天，>7天 绿灯" },
+        "positive_rate": { "score": "red",    "hospital_positive_rate": 0.55, "data_available": true, "note": "阳性率55%<60%，触发强整改" },
+        "device_age":    { "score": "unknown","hospital_chengxin_rate": null, "exemption_triggered": false, "note": "数据缺失" }
+      },
+      "expected_trigger": true,
+      "expected_level": "L4"
+    },
+    {
+      "id": "L4-002",
+      "desc": "工作负荷黄灯（饱和度87%），verdict=conditional → 应触发（合理性条件通过）",
+      "scene": "RAT-002",
+      "verdict": "conditional",
+      "dimensions": {
+        "workload":      { "score": "yellow", "hospital_saturation": 0.87, "note": "饱和度87%，≥85%但<90% 黄灯" },
+        "waiting_time":  { "score": "green",  "hospital_waiting_days": 7.5, "note": "候检7.5天，>7天 绿灯" },
+        "positive_rate": { "score": "green",  "hospital_positive_rate": 0.72, "data_available": true, "note": "阳性率72%，≥70% 绿灯" },
+        "device_age":    { "score": "green",  "hospital_chengxin_rate": 0.52, "exemption_triggered": false, "note": "成新率52%，>30% 正常" }
+      },
+      "expected_trigger": true,
+      "expected_level": "L4"
+    },
+    {
+      "id": "L4-003",
+      "desc": "四维全绿，verdict=pass → 不应触发",
+      "scene": "RAT-003",
+      "verdict": "pass",
+      "dimensions": {
+        "workload":      { "score": "green", "hospital_saturation": 0.95,  "note": "饱和度95%，≥90% 绿灯" },
+        "waiting_time":  { "score": "green", "hospital_waiting_days": 9.1,  "note": "候检9.1天，>7天 绿灯" },
+        "positive_rate": { "score": "green", "hospital_positive_rate": 0.78, "data_available": true, "note": "阳性率78%，≥70% 绿灯" },
+        "device_age":    { "score": "green", "hospital_chengxin_rate": 0.61, "exemption_triggered": false, "note": "成新率61%，>30% 正常" }
+      },
+      "expected_trigger": false,
+      "expected_level": null
+    },
+    {
+      "id": "L4-004",
+      "desc": "设备成新率28% ≤ 30%，verdict=exempt_renewal，更新豁免 → 不应触发",
+      "scene": "RAT-004",
+      "verdict": "exempt_renewal",
+      "dimensions": {
+        "workload":      { "score": "red",    "hospital_saturation": 0.81,  "note": "饱和度81%，<85% 红灯，但豁免后不参与否决" },
+        "waiting_time":  { "score": "yellow", "hospital_waiting_days": 6.1,  "note": "候检6.1天，>5.5天 黄灯，但豁免后不参与否决" },
+        "positive_rate": { "score": "green",  "hospital_positive_rate": 0.71, "data_available": true, "note": "阳性率71%，≥70% 绿灯" },
+        "device_age":    { "score": "red",    "hospital_chengxin_rate": 0.28, "exemption_triggered": true, "note": "成新率28%≤30%，触发更新豁免，一票通过" }
+      },
+      "expected_trigger": false,
+      "expected_level": null
+    }
+  ]
+}

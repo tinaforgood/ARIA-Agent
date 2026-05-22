@@ -1,0 +1,47 @@
+{"ts": "2026-05-20T07:44:53Z", "event": "pipeline_init", "model": "qwen3-max"}
+{"ts": "2026-05-20T07:44:53Z", "event": "agent1_requirements_start"}
+{"ts": "2026-05-20T07:44:53Z", "event": "agent1_requirements_call_start", "chars": 1046}
+{"ts": "2026-05-20T07:45:00Z", "event": "agent1_requirements_call_done", "elapsed_s": 6.89, "tokens": 1083}
+{"ts": "2026-05-20T07:45:00Z", "event": "agent1_requirements_done", "device": "医用磁共振成像系统（多核）"}
+{"ts": "2026-05-20T07:45:00Z", "event": "rationality_gate_start"}
+{"ts": "2026-05-20T07:45:00Z", "event": "rationality_gate_done", "verdict": "conditional", "workload": "red", "waiting": "unknown", "quality": "unknown", "device_age": "unknown", "renewal_exemption": false}
+{"ts": "2026-05-20T07:45:00Z", "event": "agent2_competitor_start"}
+{"ts": "2026-05-20T07:45:00Z", "event": "agent2_competitor_call_start", "chars": 2278}
+{"ts": "2026-05-20T07:45:25Z", "event": "agent2_competitor_call_done", "elapsed_s": 24.36, "tokens": 2199}
+{"ts": "2026-05-20T07:45:25Z", "event": "agent2_competitor_done", "rows": 7}
+{"ts": "2026-05-20T07:45:25Z", "event": "agent2_missing_price_checkpoints", "brands": ["GE医疗", "联影", "西门子医疗", "飞利浦"]}
+{"ts": "2026-05-20T07:45:25Z", "event": "agent3_budget_start"}
+{"ts": "2026-05-20T07:45:25Z", "event": "agent3_budget_call_start", "chars": 2267}
+{"ts": "2026-05-20T07:45:31Z", "event": "agent3_budget_call_done", "elapsed_s": 6.31, "tokens": 1444}
+{"ts": "2026-05-20T07:45:31Z", "event": "agent3_budget_arith_error", "errors": ["设备总金额计算有误：LLM给出单价13000000.0万×台数1应=17000000.0万，但 equipment_price_rmb=13000000.0万与竞品报价17000000.0万不符"]}
+{"ts": "2026-05-20T07:45:31Z", "event": "agent3_budget_done", "total_rmb": 16100000, "confidence": "medium", "arith_ok": false}
+{"ts": "2026-05-20T07:45:31Z", "event": "agent4_revenue_start"}
+{"ts": "2026-05-20T07:45:31Z", "event": "agent4_revenue_call_start", "chars": 677}
+{"ts": "2026-05-20T07:45:39Z", "event": "agent4_revenue_call_done", "elapsed_s": 7.97, "tokens": 795}
+{"ts": "2026-05-20T07:45:39Z", "event": "agent4_revenue_done", "payback": 5.85, "roi": 85.3}
+{"ts": "2026-05-20T07:45:39Z", "event": "agent5_compliance_start"}
+{"ts": "2026-05-20T07:45:39Z", "event": "agent5_compliance_call_start", "chars": 262}
+{"ts": "2026-05-20T07:45:50Z", "event": "agent5_compliance_call_done", "elapsed_s": 11.41, "tokens": 766}
+{"ts": "2026-05-20T07:45:50Z", "event": "agent5_compliance_done", "overall": "conditional_pass", "price_proof": "incomplete", "hitl_triggered": false}
+{"ts": "2026-05-20T07:45:50Z", "event": "agent6_document_start"}
+{"ts": "2026-05-20T07:45:50Z", "event": "agent6_document_call_start", "chars": 6879}
+{"ts": "2026-05-20T07:46:51Z", "event": "agent6_document_call_done", "elapsed_s": 60.67, "tokens": 5066}
+{"ts": "2026-05-20T07:46:51Z", "event": "agent6_document_done", "chars": 3407}
+{"ts": "2026-05-20T07:46:51Z", "event": "agent7_feedback_start"}
+{"ts": "2026-05-20T07:46:51Z", "event": "agent7_feedback_call_start", "chars": 3417}
+{"ts": "2026-05-20T07:47:00Z", "event": "agent7_feedback_call_done", "elapsed_s": 8.91, "tokens": 2477}
+{"ts": "2026-05-20T07:47:00Z", "event": "agent7_feedback_done", "total_score": 34, "grade": "B", "recommendation": "建议补充材料后立项"}
+{"ts": "2026-05-20T07:47:00Z", "event": "finalize_start"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/requirements_result.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/rationality_result.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/competitor_table.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/budget_summary.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/revenue_roi.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/compliance_result.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/feedback_result.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/evidence_trace.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/task_overview.json"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/project_document.md"}
+{"ts": "2026-05-20T07:47:00Z", "event": "artefact_saved", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results/project_document.docx"}
+{"ts": "2026-05-20T07:47:00Z", "event": "pdf_exported", "file": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/logs/approval_report_20260520_154700.pdf"}
+{"ts": "2026-05-20T07:47:00Z", "event": "finalize_done", "artefacts": "/Users/tina/Desktop/MriAgent/mr_approval_agent/cases/2b4e4fe8-592d-43af-8006-6069be4b28fe/outputs/approval/results"}

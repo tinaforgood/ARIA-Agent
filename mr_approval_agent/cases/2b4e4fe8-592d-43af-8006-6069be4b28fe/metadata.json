@@ -1,0 +1,13 @@
+{
+  "case_id": "2b4e4fe8-592d-43af-8006-6069be4b28fe",
+  "hospital_name": null,
+  "created_at": "2026-05-20T07:42:52.069094+00:00",
+  "status": "done",
+  "ingest_started_at": "2026-05-20T07:43:01.381907+00:00",
+  "ingest_done_at": "2026-05-20T07:44:53.102356+00:00",
+  "approval_started_at": "2026-05-20T07:44:53.102624+00:00",
+  "approval_done_at": "2026-05-20T07:47:00.596739+00:00",
+  "error": null,
+  "uploaded_files": {},
+  "last_job_id": "e4e03fa1-a9fc-4a6a-8fd3-92cff8091bf8"
+}

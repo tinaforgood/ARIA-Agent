@@ -1,0 +1,623 @@
+/**
+ * GuidedUploadDrawer — 结构化分类上传向导
+ *
+ * 从右侧滑入的宽版抽屉 (w-[700px])，将 8 类材料按三个业务域分组：
+ *   临床科室端 · 外部厂家端 · 院方合规端
+ *
+ * 核心交互：
+ *   - 顶部"全局智能识别区"：一次拖入所有文件，AI 按文件名关键字自动分槽
+ *   - 每类文件独立细长型 DropzoneRow（拖拽 + 点击）
+ *   - "参考样例"链接 → 展示文档格式占位预览
+ *   - 底部状态栏：进度条 + 必填计数 + "开始 AI 智能测算"按钮（必填未满时禁用）
+ */
+
+import { useState, useRef } from 'react'
+import {
+  X, Upload, Check, Eye, Sparkles, FileText,
+  Building2, ShieldCheck, Stethoscope, AlertCircle, Plus,
+  ChevronRight,
+} from 'lucide-react'
+
+// ── File group & item definitions ─────────────────────────────────────────────
+const FILE_GROUPS = [
+  {
+    id: 'clinical',
+    title: '临床科室端',
+    subtitle: '由申请科室提供',
+    Icon: Stethoscope,
+    accent: 'blue',
+    items: [
+      {
+        id: 'clinical_req', label: '临床申购单', required: true,
+        accept: '.pdf,.doc,.docx',
+        hint: '科室主任签字的设备申购申请，可含可研简述',
+        sampleFile: '临床申购单_标准样例.pdf',
+      },
+      {
+        id: 'tech_eval', label: '新技术引入评估表', required: true,
+        accept: '.pdf,.doc,.docx',
+        hint: '科室新技术准入评估，需医务处盖章',
+        sampleFile: '新技术引入评估表_标准样例.docx',
+      },
+    ],
+  },
+  {
+    id: 'vendor',
+    title: '外部厂家端',
+    subtitle: '由设备供应商提供',
+    Icon: Building2,
+    accent: 'violet',
+    items: [
+      {
+        id: 'quotation', label: '报价单（至少 1 家）', required: true,
+        accept: '.pdf,.xlsx,.xls',
+        hint: '含税总价，需加盖厂商公章，多家可多次上传',
+        sampleFile: '报价单_标准样例.xlsx',
+      },
+      {
+        id: 'reg_cert', label: '医疗器械注册证', required: true,
+        accept: '.pdf,.jpg,.png',
+        hint: '设备在华注册证，请确认在有效期内',
+        sampleFile: '医疗器械注册证_标准样例.pdf',
+      },
+      {
+        id: 'brochure', label: '产品彩页/规格书', required: false,
+        accept: '.pdf,.pptx',
+        hint: '技术规格说明，有助于竞品比对分析',
+        sampleFile: '产品彩页_标准样例.pdf',
+      },
+    ],
+  },
+  {
+    id: 'compliance',
+    title: '院方合规端',
+    subtitle: '由院方职能部门提供',
+    Icon: ShieldCheck,
+    accent: 'emerald',
+    items: [
+      {
+        id: 'history_report', label: '历史同类立项报告', required: true,
+        accept: '.pdf,.doc,.docx',
+        hint: '近 3 年同类设备立项建议书，供参考对比',
+        sampleFile: '历史立项报告_标准样例.pdf',
+      },
+      {
+        id: 'medicare', label: '医保收费标准文件', required: true,
+        accept: '.pdf,.doc,.docx',
+        hint: '物价部门出具的当年 MRI 检查收费通知',
+        sampleFile: '医保收费标准_标准样例.pdf',
+      },
+      {
+        id: 'inventory', label: '现有设备台账', required: false,
+        accept: '.xlsx,.xls,.pdf',
+        hint: '设备科在用设备清单，更新替换类项目须提供',
+        sampleFile: '设备台账_标准样例.xlsx',
+      },
+    ],
+  },
+]
+
+const ALL_ITEMS      = FILE_GROUPS.flatMap((g) => g.items)
+const REQUIRED_ITEMS = ALL_ITEMS.filter((i) => i.required)
+const TOTAL          = ALL_ITEMS.length
+
+// Keyword map for global auto-classify
+const KW_MAP = {
+  clinical_req:   ['申购', '申请单', 'clinical'],
+  tech_eval:      ['评估', 'evaluation', '新技术'],
+  quotation:      ['报价', 'quote', '价格'],
+  reg_cert:       ['注册', 'registration', '国械'],
+  brochure:       ['彩页', '规格', 'brochure'],
+  history_report: ['历史', '立项', 'history'],
+  medicare:       ['医保', '收费', '物价'],
+  inventory:      ['台账', '清单', 'inventory'],
+}
+
+// Color palette
+const ACCENT_CLS = {
+  blue:   { groupBg: 'bg-blue-50/60',    groupBorder: 'border-blue-200',   iconBg: 'bg-blue-100',    iconText: 'text-blue-500',    headText: 'text-blue-700',   countText: 'text-blue-600' },
+  violet: { groupBg: 'bg-violet-50/60',  groupBorder: 'border-violet-200', iconBg: 'bg-violet-100',  iconText: 'text-violet-500',  headText: 'text-violet-700', countText: 'text-violet-600' },
+  emerald:{ groupBg: 'bg-emerald-50/60', groupBorder: 'border-emerald-200',iconBg: 'bg-emerald-100', iconText: 'text-emerald-500', headText: 'text-emerald-700',countText: 'text-emerald-600' },
+}
+
+// ── Sample preview modal ───────────────────────────────────────────────────────
+function SampleModal({ item, onClose }) {
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-6">
+      <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]" onClick={onClose} />
+      <div className="relative z-10 flex w-[520px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-slate-100 px-5 py-3.5">
+          <div className="flex items-center gap-2.5">
+            <FileText className="size-4 text-blue-500" strokeWidth={1.75} />
+            <span className="text-[14px] font-semibold text-slate-800">参考样例文档</span>
+            <span className="rounded-md bg-slate-100 px-2 py-0.5 font-mono text-[10.5px] text-slate-500">
+              {item.sampleFile}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex size-7 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+          >
+            <X className="size-4" strokeWidth={2} />
+          </button>
+        </div>
+
+        {/* Doc type label */}
+        <div className="border-b border-slate-100 bg-slate-50 px-5 py-2.5">
+          <span className="text-[12px] text-slate-500">
+            文件类型：<span className="font-medium text-slate-700">{item.label}</span>
+            <span className="ml-2 text-slate-400">·</span>
+            <span className="ml-2 text-slate-500">{item.hint}</span>
+          </span>
+        </div>
+
+        {/* PDF placeholder */}
+        <div className="bg-slate-100 p-5">
+          <div className="overflow-hidden rounded-xl bg-white shadow-sm">
+            {/* Simulated document */}
+            <div className="border-b border-slate-100 bg-slate-50 px-5 py-3">
+              <div className="h-4 w-40 rounded-md bg-slate-200" />
+            </div>
+            <div className="p-5">
+              <div className="mb-4 h-3 w-56 rounded-full bg-slate-100" />
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div key={i} className="mb-2 h-2.5 rounded-full bg-slate-100"
+                  style={{ width: `${55 + Math.sin(i * 2.1) * 32}%` }} />
+              ))}
+              {/* Simulated table */}
+              <div className="mt-4 overflow-hidden rounded-lg border border-slate-100">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div key={i} className={`flex divide-x divide-slate-100 ${i === 0 ? 'bg-slate-50' : ''}`}>
+                    {[1, 2, 3].map((j) => (
+                      <div key={j} className="flex-1 p-2">
+                        <div className={`h-2.5 rounded-full ${i === 0 ? 'bg-slate-200' : 'bg-slate-100'}`}
+                          style={{ width: `${40 + (i + j) * 12}%` }} />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t border-slate-100 px-5 py-3">
+          <span className="flex items-center gap-1.5 text-[11.5px] text-amber-600">
+            <AlertCircle className="size-3.5" strokeWidth={2} />
+            仅作格式参考，实际数据以医院要求为准
+          </span>
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-lg bg-blue-600 px-4 py-1.5 text-[12.5px] font-medium text-white hover:bg-blue-700 transition-colors"
+          >
+            关闭预览
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Individual dropzone row ────────────────────────────────────────────────────
+function DropzoneRow({ item, file, onUpload, onRemove, onShowSample }) {
+  const inputRef = useRef(null)
+  const [isDragOver, setIsDragOver] = useState(false)
+
+  const acceptLabel = item.accept
+    .split(',')
+    .map((s) => s.replace('.', '').toUpperCase())
+    .join(' / ')
+
+  return (
+    <div className="flex items-center gap-3 py-2.5">
+
+      {/* Circle status indicator */}
+      <div className={[
+        'flex size-[18px] shrink-0 items-center justify-center rounded-full border-2 transition-all duration-200',
+        file
+          ? 'border-emerald-500 bg-emerald-500'
+          : 'border-slate-200 bg-white',
+      ].join(' ')}>
+        {file && <Check className="size-2.5 text-white" strokeWidth={3.5} />}
+      </div>
+
+      {/* Label block */}
+      <div className="w-[196px] shrink-0">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[12.5px] font-medium text-slate-800">{item.label}</span>
+          {item.required
+            ? <span className="rounded-[4px] bg-red-50 px-1.5 py-0.5 text-[9.5px] font-bold text-red-500">必填</span>
+            : <span className="rounded-[4px] bg-slate-100 px-1.5 py-0.5 text-[9.5px] text-slate-400">选填</span>
+          }
+        </div>
+        <p className="mt-0.5 text-[10.5px] leading-tight text-slate-400">{item.hint}</p>
+        <button
+          type="button"
+          onClick={() => onShowSample(item)}
+          className="mt-0.5 flex items-center gap-0.5 text-[11px] font-medium text-blue-500 transition-colors hover:text-blue-700"
+        >
+          <Eye className="size-3" strokeWidth={2} />
+          参考样例
+        </button>
+      </div>
+
+      {/* Dropzone or uploaded state */}
+      {file ? (
+        /* Uploaded */
+        <div className="flex flex-1 items-center justify-between gap-2 rounded-lg border border-emerald-200 bg-emerald-50/70 px-3 py-2">
+          <div className="flex min-w-0 items-center gap-1.5">
+            <FileText className="size-3.5 shrink-0 text-emerald-500" strokeWidth={1.75} />
+            <span className="truncate text-[12px] font-medium text-emerald-700">{file.name}</span>
+            <span className="shrink-0 text-[10.5px] text-emerald-400">
+              {(file.size / 1024).toFixed(0)} KB
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => onRemove(item.id)}
+            className="shrink-0 rounded-md p-1 text-emerald-300 transition-colors hover:bg-white/60 hover:text-red-500"
+          >
+            <X className="size-3.5" strokeWidth={2.5} />
+          </button>
+        </div>
+      ) : (
+        /* Dropzone */
+        <div
+          role="button"
+          tabIndex={0}
+          onDragOver={(e) => { e.preventDefault(); setIsDragOver(true) }}
+          onDragLeave={() => setIsDragOver(false)}
+          onDrop={(e) => {
+            e.preventDefault()
+            setIsDragOver(false)
+            const f = e.dataTransfer.files?.[0]
+            if (f) onUpload(item.id, f)
+          }}
+          onClick={() => inputRef.current?.click()}
+          onKeyDown={(e) => e.key === 'Enter' && inputRef.current?.click()}
+          className={[
+            'flex flex-1 cursor-pointer select-none items-center justify-between gap-2 rounded-lg border border-dashed px-3 py-[9px] text-[12px] transition-all',
+            isDragOver
+              ? 'border-blue-400 bg-blue-50 text-blue-600'
+              : 'border-slate-200 bg-white text-slate-400 hover:border-blue-300 hover:bg-blue-50/30 hover:text-blue-500',
+          ].join(' ')}
+        >
+          <span className="flex items-center gap-1.5">
+            <Upload className="size-3.5 shrink-0" strokeWidth={1.75} />
+            {isDragOver ? '松开以上传' : '拖入或点击上传'}
+          </span>
+          <span className="text-[10px] text-slate-300">{acceptLabel}</span>
+        </div>
+      )}
+
+      <input
+        ref={inputRef}
+        type="file"
+        accept={item.accept}
+        className="hidden"
+        onChange={(e) => {
+          const f = e.target.files?.[0]
+          if (f) onUpload(item.id, f)
+          e.target.value = ''
+        }}
+      />
+    </div>
+  )
+}
+
+// ── Main drawer ────────────────────────────────────────────────────────────────
+export default function GuidedUploadDrawer({ isOpen, onClose, onSubmit }) {
+  const [files,          setFiles]          = useState({})  // { [itemId]: File }
+  const [isDragOverAll,  setIsDragOverAll]  = useState(false)
+  const [sampleItem,     setSampleItem]     = useState(null)
+  const globalRef = useRef(null)
+
+  const uploadedCount  = Object.keys(files).length
+  const requiredFilled = REQUIRED_ITEMS.every((i) => files[i.id])
+
+  function handleUpload(id, file) {
+    setFiles((prev) => ({ ...prev, [id]: file }))
+  }
+  function handleRemove(id) {
+    setFiles((prev) => { const n = { ...prev }; delete n[id]; return n })
+  }
+
+  // Smart auto-classify for global drop
+  function classifyAndUpload(fileList) {
+    const updates = {}
+    const remaining = []
+    fileList.forEach((file) => {
+      const name = file.name.toLowerCase()
+      let matched = false
+      for (const [id, kws] of Object.entries(KW_MAP)) {
+        if (kws.some((kw) => name.includes(kw.toLowerCase()))) {
+          if (!files[id] && !updates[id]) { updates[id] = file; matched = true; break }
+        }
+      }
+      if (!matched) remaining.push(file)
+    })
+    // Fill unmatched into first empty slots
+    for (const file of remaining) {
+      for (const item of ALL_ITEMS) {
+        if (!files[item.id] && !updates[item.id]) { updates[item.id] = file; break }
+      }
+    }
+    setFiles((prev) => ({ ...prev, ...updates }))
+  }
+
+  function handleGlobalDrop(e) {
+    e.preventDefault()
+    setIsDragOverAll(false)
+    const list = Array.from(e.dataTransfer?.files ?? [])
+    if (list.length) classifyAndUpload(list)
+  }
+
+  function handleGlobalChange(e) {
+    const list = Array.from(e.target.files ?? [])
+    if (list.length) classifyAndUpload(list)
+    e.target.value = ''
+  }
+
+  function handleSubmit() {
+    if (!requiredFilled) return
+    onSubmit?.(files)
+    onClose?.()
+  }
+
+  // Progress pct
+  const pct = Math.round((uploadedCount / TOTAL) * 100)
+  const missingRequired = REQUIRED_ITEMS.filter((i) => !files[i.id]).length
+
+  return (
+    <>
+      {/* ── Backdrop ── */}
+      <div
+        className={[
+          'fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-[2px] transition-opacity duration-300',
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none',
+        ].join(' ')}
+        onClick={onClose}
+      />
+
+      {/* ── Drawer panel ── */}
+      <div
+        className={[
+          'fixed right-0 top-0 z-50 flex h-full w-[700px] flex-col bg-white shadow-2xl',
+          'transition-transform duration-300 ease-out',
+          isOpen ? 'translate-x-0' : 'translate-x-full',
+        ].join(' ')}
+      >
+
+        {/* ──────── Header ──────── */}
+        <div className="flex shrink-0 items-center justify-between border-b border-slate-100 px-6 py-4">
+          <div className="flex items-center gap-3">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-md shadow-blue-200">
+              <Plus className="size-5 text-white" strokeWidth={2.5} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-[15px] font-bold text-slate-900">新建立项论证任务</h2>
+                <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-600">
+                  {TOTAL} 类标准材料
+                </span>
+              </div>
+              <p className="text-[12px] text-slate-400">
+                按分类上传材料，AI 自动解析并填充立项论证表单
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex size-8 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
+          >
+            <X className="size-5" strokeWidth={2} />
+          </button>
+        </div>
+
+        {/* ──────── Scrollable body ──────── */}
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+
+          {/* ── Global smart zone ── */}
+          <div className="px-6 pt-5 pb-3">
+            <div
+              role="button"
+              tabIndex={0}
+              onDragOver={(e) => { e.preventDefault(); setIsDragOverAll(true) }}
+              onDragLeave={() => setIsDragOverAll(false)}
+              onDrop={handleGlobalDrop}
+              onClick={() => globalRef.current?.click()}
+              onKeyDown={(e) => e.key === 'Enter' && globalRef.current?.click()}
+              className={[
+                'relative cursor-pointer overflow-hidden rounded-2xl border-2 border-dashed px-5 py-4 transition-all duration-200',
+                isDragOverAll
+                  ? 'border-blue-400 bg-blue-50/80 shadow-inner'
+                  : 'border-slate-200 bg-gradient-to-br from-blue-50/50 via-white to-violet-50/30 hover:border-blue-300',
+              ].join(' ')}
+            >
+              {/* Background grid decoration */}
+              <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
+                style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+
+              <div className="relative flex items-center gap-4">
+                <div className={[
+                  'flex size-11 shrink-0 items-center justify-center rounded-xl shadow-lg transition-transform duration-200',
+                  isDragOverAll
+                    ? 'scale-110 bg-blue-500 shadow-blue-200'
+                    : 'bg-gradient-to-br from-blue-500 to-violet-500 shadow-blue-100',
+                ].join(' ')}>
+                  <Sparkles className="size-5 text-white" strokeWidth={2} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[13.5px] font-semibold text-slate-800">
+                    全局智能识别区
+                    <span className="ml-1.5 rounded-md bg-gradient-to-r from-blue-100 to-violet-100 px-1.5 py-0.5 text-[10.5px] font-bold text-blue-600">
+                      AI 自动分类
+                    </span>
+                  </p>
+                  <p className="mt-0.5 text-[12px] leading-relaxed text-slate-500">
+                    你可以将<span className="font-semibold text-slate-700">所有文件一次性拖入此处</span>，
+                    AI 将自动识别文件类型并分配到下方对应槽位
+                  </p>
+                </div>
+                <div className={[
+                  'shrink-0 rounded-xl border px-3.5 py-2 text-[12px] font-medium transition-all',
+                  isDragOverAll
+                    ? 'border-blue-300 bg-white text-blue-600 shadow-sm'
+                    : 'border-slate-200 bg-white/80 text-slate-500',
+                ].join(' ')}>
+                  {isDragOverAll ? '✨ 松开即可' : '拖入 · 多选上传'}
+                </div>
+              </div>
+            </div>
+            <input ref={globalRef} type="file" multiple className="hidden" onChange={handleGlobalChange} />
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center gap-3 px-6 pb-3">
+            <div className="h-px flex-1 bg-slate-100" />
+            <span className="flex items-center gap-1 text-[11px] text-slate-400">
+              <ChevronRight className="size-3 text-slate-300" />
+              或按分类逐项上传
+              <ChevronRight className="size-3 text-slate-300" />
+            </span>
+            <div className="h-px flex-1 bg-slate-100" />
+          </div>
+
+          {/* ── File groups ── */}
+          <div className="flex flex-col gap-3 px-6 pb-5">
+            {FILE_GROUPS.map((group) => {
+              const ac = ACCENT_CLS[group.accent]
+              const GroupIcon = group.Icon
+              const groupDone = group.items.filter((i) => files[i.id]).length
+
+              return (
+                <div
+                  key={group.id}
+                  className={`overflow-hidden rounded-2xl border ${ac.groupBorder} ${ac.groupBg}`}
+                >
+                  {/* Group header */}
+                  <div className="flex items-center justify-between px-4 py-3">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`flex size-7 shrink-0 items-center justify-center rounded-lg ${ac.iconBg}`}>
+                        <GroupIcon className={`size-4 ${ac.iconText}`} strokeWidth={1.75} />
+                      </div>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className={`text-[13px] font-semibold ${ac.headText}`}>{group.title}</span>
+                        <span className="text-[11.5px] text-slate-400">{group.subtitle}</span>
+                      </div>
+                    </div>
+                    {/* Completion mini-badge */}
+                    <span className={[
+                      'rounded-full px-2.5 py-0.5 text-[11.5px] font-semibold',
+                      groupDone === group.items.length
+                        ? 'bg-emerald-100 text-emerald-600'
+                        : `${ac.groupBg} ${ac.countText}`,
+                    ].join(' ')}>
+                      {groupDone === group.items.length ? '✓ 已完成' : `${groupDone} / ${group.items.length}`}
+                    </span>
+                  </div>
+
+                  {/* Thin divider */}
+                  <div className={`mx-4 h-px opacity-40 ${ac.groupBorder}`} style={{ backgroundColor: 'currentColor', color: 'transparent', borderTop: '1px solid' }} />
+                  <div className={`mx-4 border-t ${ac.groupBorder} opacity-30`} />
+
+                  {/* Rows */}
+                  <div className="flex flex-col divide-y divide-white/60 px-4">
+                    {group.items.map((item) => (
+                      <DropzoneRow
+                        key={item.id}
+                        item={item}
+                        file={files[item.id] ?? null}
+                        onUpload={handleUpload}
+                        onRemove={handleRemove}
+                        onShowSample={setSampleItem}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* ──────── Footer status bar ──────── */}
+        <div className="shrink-0 border-t border-slate-100 bg-white px-6 py-4">
+          <div className="flex items-center justify-between gap-4">
+
+            {/* Progress info */}
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2.5">
+                <span className="text-[13px] font-semibold text-slate-700">
+                  已集齐&nbsp;
+                  <span className={uploadedCount > 0 ? 'text-blue-600' : 'text-slate-400'}>
+                    {uploadedCount}
+                  </span>
+                  <span className="text-slate-400">/{TOTAL}</span>
+                  &nbsp;份核心材料
+                </span>
+
+                {missingRequired > 0 ? (
+                  <span className="flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-600">
+                    <AlertCircle className="size-3" strokeWidth={2.5} />
+                    {missingRequired} 项必填未完成
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-600">
+                    <Check className="size-3" strokeWidth={3} />
+                    必填项已集齐
+                  </span>
+                )}
+              </div>
+
+              {/* Progress bar */}
+              <div className="flex items-center gap-2">
+                <div className="h-1.5 w-44 overflow-hidden rounded-full bg-slate-100">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 transition-all duration-500"
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+                <span className="text-[11px] tabular-nums text-slate-400">{pct}%</span>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex shrink-0 items-center gap-2.5">
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-xl border border-slate-200 px-4 py-2 text-[13px] font-medium text-slate-600 transition-colors hover:bg-slate-50"
+              >
+                稍后再说
+              </button>
+              <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={!requiredFilled}
+                className={[
+                  'flex items-center gap-2 rounded-xl px-5 py-2 text-[13px] font-semibold transition-all duration-200',
+                  requiredFilled
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 hover:bg-blue-700 active:scale-95'
+                    : 'cursor-not-allowed bg-slate-100 text-slate-400',
+                ].join(' ')}
+              >
+                <Sparkles className={`size-4 ${requiredFilled ? '' : 'opacity-40'}`} strokeWidth={2} />
+                开始 AI 智能测算
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Sample preview modal ── */}
+      {sampleItem && (
+        <SampleModal item={sampleItem} onClose={() => setSampleItem(null)} />
+      )}
+    </>
+  )
+}

@@ -1,0 +1,18 @@
+{
+  "mineru": {
+    "api_url": "https://mineru.net/api/v4/extract/task",
+    "backend": "pipeline",
+    "method": "auto"
+  },
+  "qwen": {
+    "api_key": "YOUR_DASHSCOPE_API_KEY",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen3-max",
+    "max_tokens": 2000,
+    "temperature": 0.2
+  },
+  "runtime": {
+    "max_workers": 4,
+    "parser_mode": "mineru"
+  }
+}

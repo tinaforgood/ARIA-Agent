@@ -1,0 +1,59 @@
+{
+  "job_id": "e4e03fa1-a9fc-4a6a-8fd3-92cff8091bf8",
+  "case_id": "2b4e4fe8-592d-43af-8006-6069be4b28fe",
+  "original_file": "SHA6PH-MR2026.pdf",
+  "uploaded_at": "2026-05-20T07:42:54.585256+00:00",
+  "total_pages": 59,
+  "sections": [
+    {
+      "item_id": "basic_info",
+      "category_name": "基本情况表",
+      "folder": "01_requirements",
+      "saved_as": "e4e03fa1_SHA6PH-MR2026_基本情况表.pdf",
+      "pages": "第 1–3 页",
+      "start": 1,
+      "end": 3,
+      "size_kb": 589
+    },
+    {
+      "item_id": "budget_list",
+      "category_name": "预算清单",
+      "folder": "05_budget",
+      "saved_as": "e4e03fa1_SHA6PH-MR2026_预算清单.pdf",
+      "pages": "第 4–5 页",
+      "start": 4,
+      "end": 5,
+      "size_kb": 280
+    },
+    {
+      "item_id": "minutes",
+      "category_name": "论证纪要",
+      "folder": "03_compliance",
+      "saved_as": "e4e03fa1_SHA6PH-MR2026_论证纪要.pdf",
+      "pages": "第 6–8 页",
+      "start": 6,
+      "end": 8,
+      "size_kb": 413
+    },
+    {
+      "item_id": "nmpa_cert",
+      "category_name": "NMPA证",
+      "folder": "02_competitors",
+      "saved_as": "e4e03fa1_SHA6PH-MR2026_NMPA证.pdf",
+      "pages": "第 9–28 页",
+      "start": 9,
+      "end": 28,
+      "size_kb": 2059
+    },
+    {
+      "item_id": "price_proof",
+      "category_name": "价格依据证明",
+      "folder": "06_price",
+      "saved_as": "e4e03fa1_SHA6PH-MR2026_价格依据证明.pdf",
+      "pages": "第 29–59 页",
+      "start": 29,
+      "end": 59,
+      "size_kb": 4196
+    }
+  ]
+}

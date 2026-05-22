@@ -1,0 +1,1661 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "3.0T磁共振配置可行性报告书"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "松原吉林油田医院",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "2022年2月"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "目       录",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "Ⅰ  医院概况……………………………………………………3",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     1、整体规模………………………………………………3",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     2、医疗任务………………………………………………3",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     3、医疗效率………………………………………………4",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     4、学科优势………………………………………………4",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     5、人员素质………………………………………………4",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     6、科研水平………………………………………………5",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     7、教学任务………………………………………………5",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "Ⅱ  3.0T磁共振的需求情况……………………………………5",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": " 1、3.0T磁共振的优点 ………………………………… 6",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": " 2、前期准备工作  ………………………………………7",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": " 3、配套诊疗设备及相关临床科室 …………………… 7",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "III  磁共振科发展情况  …………………………………… 7",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     1、磁共振科概况 ……………………………………… 7",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     2、磁共振科人员组成 ………………………………… 8",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     3、磁共振科设备 ……………………………………… 8",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "     4、磁共振科业务发展……………………………………8",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "IV  结语 ……………………………………………………… 9",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "Ⅰ、医院概况",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 22
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我们将从整体规模、医疗任务、医疗效率、学科优势、科研水平、人员素质、教学任务6个方面，全方位描述我院概况。",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "1、整体规模",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 24
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院始建于1961年，是一所集医疗、教学、科研为一体的大型综合性医院，现有职工"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "1478",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "人，是松原市最大的医疗中心。2009年被评为“"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "三级甲等",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "”医院。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "现在实际开放床位"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "1148",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "张。医院现有设备总值"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": " 2.6亿元",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "（该数值为折旧换算后数值）。占地面积"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": " 13.8万平方米",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "。现代化新门诊大楼（包括影像中心和肿瘤诊断治疗中心）及新住院大楼"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "8万平方米",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "医院分为院本部、江北分院、卫生防疫站及社区卫生服务中心2家，社区服务站15家，一级甲等分院6家，并且我院绝大部分临床及医技科室的各项医疗指标居全市之首。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 27,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "2、医疗任务",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 28
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院所完成医疗任务量在市内最大，在省内也位于前列。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 29
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年门急诊量"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "19.2万",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "余人次;"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 30
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "全年住院病人1"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": ".7万",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "人次；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年仪器设备检查"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": " 80",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "万例次；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年大型影像设备检查"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "0.8",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "万余例次；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 33
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年检验项目"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "150",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "万项次。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 34
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年手术量"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "1638",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "例次"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "全院年总收入近"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "1.2亿元",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 36
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "3.",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "医疗效率"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 37
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "床位使用率"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": " 110 %；",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 38
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "平均住院日"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "11 天；",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 39
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "术前平均住院日"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "2.8天",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 40
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "4.学科优势",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "医院共有临床科室30个及医技科室"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "13",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "个，拥有神经内科、神经外科、血液肿瘤科、肝病科、心血管内科、普通外科、骨科、儿科、耳鼻喉科等一系列知名学科。全院各科室技术水平均达到了三级医院重点专科水平 。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 42
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "其中与磁共振应用关系密切的血液肿瘤科、骨科、神经外科、普外科、神经内科、儿科等各专科均为省市级重点学科。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 43
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院拥有省级科研所共 9个，治疗中心 12个 。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 44
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "5.人员素质",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 45,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "全院"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "1/2",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "学科为中华医学会吉林省分会松原市专业委员会主任委员单位。"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "1/3",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "的学科主任在吉林省内有学术位置并担任着省学会主任或副主任委员职务。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 46,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "全院有各级医师"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": " 1166",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "人，副高职以上人员218人；全院医师几乎均为本科以上学历，其中84名硕士。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 47
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院多次获得省级科研成果，近3年承担各级科研课题36项；发表论文966篇，其中在中华医学等核心医学期刊81篇，SCI收录3篇。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 48
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院以技术创新为源动力，每年都引进高学历人才，还和许多国内高知名度医学学院建立了友好合作关系，近3年有74名人员进修学习，而且每年都有大批的省内外外专家来访，很大程度的提高了我院医生的医疗技术水平。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 49
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "6.科研水平",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 50
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "医院具有较强的科研实力，设有5个市级重点实验室。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 51
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "近3年内：",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 52
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "承担部省级课题 3项；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 53
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "承担市厅级课题35项；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 54
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "总计科研经费214余万元。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 55
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "7.教学任务",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 56,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年承担"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "100",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "名五年制学生教学任务；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 57,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年带教"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "200",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "名医疗及护理专业学生；"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 58,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "年承担"
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "30",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "content": "名来自松原市内外及医联体的进修生教学任务。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 59,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "Ⅱ、国际先进3.0T磁共振的需求情况",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 60
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "随着我院业务发展，临床应用和科学研究对磁共振扫描的需求越来越大，先进的设备可以实现更高的成像质量和更快的成像速度，更加有利于患者疾病的早期诊断、微小病灶的检出以及为临床提供更加详实的影像信息。我院现有两台磁共振已经远远不能满足临床需要，其中现有美国GE 3.0T磁共振已经使用超过十年，目前进入高故障期，维修成本大大增加。引进国际先进全新3.0T磁共振配备先进的智能扫描平台、最新软硬件技术，实现MRI快速扫描与卓越图像质量的完美统一，进一步提高我院诊疗水平，支持医院科研水平更上一个台阶，提高医疗质量，实现为广大人民群众提供优质、高效医疗服务。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 61
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "1、国际先进3.0T磁共振的优点",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 62
+                },
+                {
+                    "type": "list",
+                    "attribute": "ordered",
+                    "ilevel": 0,
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "lines": [
+                                {
+                                    "spans": [
+                                        {
+                                            "type": "text",
+                                            "content": "高组织对比度、高信噪比图像： 3.0T超高场磁共振图像对组织的形态及病理改变具有高敏感性，于疾病的早期发现早期诊断有显著优势。"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "lines": [
+                                {
+                                    "spans": [
+                                        {
+                                            "type": "text",
+                                            "content": "高扫描速度：进行大范围全身检查，大大缩短传统MRI检查时间，方便快捷。"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "lines": [
+                                {
+                                    "spans": [
+                                        {
+                                            "type": "text",
+                                            "content": "安全无辐射、高检查舒适度，低噪音环境，大检查孔径，提供安全舒适的无电离辐射检查，也适应危重、肥胖、幽闭综合症患者检查。"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "lines": [
+                                {
+                                    "spans": [
+                                        {
+                                            "type": "text",
+                                            "content": "多种高级特殊磁共振成像技术，提供组织器官的生理生化及功能信息。"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "lines": [
+                                {
+                                    "spans": [
+                                        {
+                                            "type": "text",
+                                            "content": "更高的影像质量,满足临床及科研不断提升的要求。"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 63
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "磁共振应用于临床医学，帮助专业人员在了解人体疾病状况方便起到了巨大的作用。而国际先进3.0T磁共振的应用，更是将磁共振的价值更出色地发挥了出来。它以更快的扫描时间、更高的分辨率和清晰度，帮助专业医生更加快速地锁定病人的患病之处。磁共振对实质器官如脑、甲状腺、肝、胆、脾、肾、胰、肾上腺、子宫、卵巢、前列腺腺等有绝佳的诊断功能，除了骨关节和神经系统外，磁共振也使恶性肿瘤、心脏及脑血管疾病无所遁形。磁共振具有非侵入性、无辐射、高清晰度、高确诊性等特点，3.0T磁共振将发挥更大的作用。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 64
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "2、前期准备工作",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 65,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院磁共振应用已经二十年，磁共振科医生有着丰富的操作和诊断经验，医院已经规划备置磁共振机房。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 66,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "3、配套诊疗设备及相关临床科室",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 67
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "磁共振科现有设备3.T磁共振1台、1.5T磁共振1台。影像中心设有64排螺旋CT、双源CT、DSA、数字X光机、超声；核医学科有ECT等大型影像设备，各影像设备之间进行微机联网诊断，相互交流。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 68
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "III、磁共振科发展情况：",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 69,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "磁共振科概况：",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 70,
+                    "is_numbered_style": true,
+                    "level": 2,
+                    "section_number": "1.1."
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "松原吉林油田医院磁共振科成立于2000年，是集科研、教学、临床于一体的科室，是吉林省最先引进3.T磁共振，经过近20多年发展，磁共振诊断水平处于松原地区领先水平，科室主任松原市医学会放射学分会副主任委员、吉林省医师协会放射医师分会常务委员、吉林省医学会核医学专科分会常务委员、吉林省医学会放射学专科分会委员、吉林省医学会影像技术专科分会委员、吉林省医学会放射学分会头颈学组委员。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 71
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "2、磁共振科人员组成：",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 72
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "我院磁共振科共有人员13人，医生10人，护士3人。取得大型设备合格证人数9人；科室主任医师1人，副主任医师3人，主治医师3人，医师3人；副主任护师2人，主管护师1人。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 73
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "3、磁共振科室设备：",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 74
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "科室装备先进，技术力量雄厚，配备了美国GE3.0T磁共振1台，德国西门子1.5T磁共振1台，为医院提供了完整的高质量的医疗服务。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 75
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "4、磁共振科业务发展：",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 76
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "磁共振科近年来检查人数剧增，日均坚持检查人数超80人次，每天工作时间达9个小时以上；广泛应用于神经系统、胸腹部、脊柱、乳腺、盆腔及四肢等部位进行扫描及诊断疾病；科室课题获得市院级科技进步奖1项，在国家级及省级核心期刊发表学术文章10余篇。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 77
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "IV、结语",
+                                    "style": [
+                                        "bold"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 78,
+                    "is_numbered_style": false,
+                    "level": 1
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "综上所述，松原吉林油田医院磁共振科无论从科室规模、国际先进3.0T磁共振需求情况、配套诊疗措施和设备及科室的发展等所有各方面评估，均已完全具备配置磁共振科的可行性。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 79,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "国际先进3.0T磁共振的独到优势和功能，为影像诊断水平的迅速发展提供强有力的支持，临床疾病应用范围更加广泛。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 80,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "title",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "国际先进3.0T磁共振的配置将有力地提高我科科研及技术整体水平，与我院整体发展水平相适应。希望各位领导和专家能亲自莅临我院实地考察，以进一步了解我科对磁共振科的迫切需求，并给予指导。请准允我们的申请。"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 81,
+                    "is_numbered_style": false,
+                    "level": 2
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "谢谢！"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 82
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "松原吉林油田医院磁共振科"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 83
+                },
+                {
+                    "type": "text",
+                    "lines": [
+                        {
+                            "spans": [
+                                {
+                                    "type": "text",
+                                    "content": "2022年2月"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 84
+                }
+            ],
+            "discarded_blocks": [],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "office",
+    "_version_name": "3.1.11"
+}

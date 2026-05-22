@@ -1,0 +1,15 @@
+{
+  "recommended_brand": "飞利浦",
+  "recommended_model": "Ingenia Elition S",
+  "equipment_price_rmb": 13000000,
+  "installation_cost_rmb": 800000,
+  "room_renovation_rmb": 1200000,
+  "it_integration_rmb": 300000,
+  "training_rmb": 150000,
+  "annual_maintenance_rmb": 650000,
+  "total_budget_rmb": 16100000,
+  "confidence": "medium",
+  "uncertain_items": [
+    "room_renovation_rmb: 机房改造费用无原始数据，估算区间为100万–150万元"
+  ]
+}

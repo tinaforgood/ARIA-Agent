@@ -1,0 +1,617 @@
+{
+  "a_requirements": [
+    {
+      "file": "50万元以上大型医疗设备预算申请表（含可行性报告1）.docx",
+      "category": "a_requirements",
+      "origin_type": "agent_corpus",
+      "doc_category": "a_requirements",
+      "fields": {
+        "设备名称": "X射线计算机体层摄影设备",
+        "设备类型": "CT",
+        "申请科室": null,
+        "申请数量": "壹套",
+        "申请金额": null,
+        "业务需求描述": "用于健康体检、门急诊平扫增强、低剂量肺癌筛查、多期项扫描、高分辨率成像及三维重建等，提升诊断效率与水平。",
+        "临床痛点": "二级及三级医院CT排队时间长，患者无法及时检查；现有设备难以满足快速高质量扫描需求。",
+        "竞品品牌列表": [
+          "联影",
+          "GE",
+          "西门子"
+        ],
+        "竞品参数对比": null,
+        "单次收费标准": null,
+        "月检查量": null,
+        "投入回收期": null
+      },
+      "summary": "申请购置CT设备以缓解检查排队问题并提升诊疗能力。",
+      "confidence": 0.92
+    },
+    {
+      "file": "3.0T磁共振配置可行性报告.docx",
+      "category": "a_requirements",
+      "origin_type": "agent_corpus",
+      "doc_category": "a_requirements",
+      "fields": {
+        "设备名称": "3.0T磁共振",
+        "设备类型": "磁共振成像设备",
+        "申请科室": "磁共振科",
+        "申请数量": null,
+        "申请金额": null,
+        "业务需求描述": null,
+        "临床痛点": null,
+        "竞品品牌列表": null,
+        "竞品参数对比": null,
+        "单次收费标准": null,
+        "月检查量": null,
+        "投入回收期": null
+      },
+      "summary": "报告分析3.0T磁共振配置的可行性及科室发展情况。",
+      "confidence": 0.65
+    },
+    {
+      "file": "e4e03fa1_SHA6PH-MR2026_基本情况表.pdf",
+      "category": "a_requirements",
+      "origin_type": "user_upload",
+      "doc_category": "a_requirements",
+      "fields": {
+        "设备名称": null,
+        "设备类型": null,
+        "申请科室": null,
+        "申请数量": 11,
+        "申请金额": 9040,
+        "业务需求描述": null,
+        "临床痛点": null,
+        "竞品品牌列表": null,
+        "竞品参数对比": null,
+        "单次收费标准": null,
+        "月检查量": null,
+        "投入回收期": null
+      },
+      "summary": "上海市六院2026年拟申请11台专业设备，预算9040万元。",
+      "confidence": 0.85
+    },
+    {
+      "file": "50万元及以上医学装备可行性论证报告.docx",
+      "category": "a_requirements",
+      "origin_type": "agent_corpus",
+      "doc_category": "a_requirements",
+      "fields": {
+        "设备名称": "磁共振成像系统",
+        "设备类型": "新增",
+        "申请科室": "放射科",
+        "申请数量": "1套",
+        "申请金额": 1700.0,
+        "业务需求描述": "开展全身各系统常规MRI检查及多项新技术，如颅神经高清成像、头颈动脉血管壁成像、全脑不打药灌注ASL成像、内耳膜迷路钆剂增强成像、脑功能成像、心脏MRI评估、磁共振小肠成像、肝脏脂肪/铁沉积定量成像、神经丛成像、无对比剂血管成像等。",
+        "临床痛点": null,
+        "竞品品牌列表": null,
+        "竞品参数对比": null,
+        "单次收费标准": null,
+        "月检查量": null,
+        "投入回收期": null
+      },
+      "summary": "放射科申请新增1套1700万元磁共振成像系统用于拓展高端影像诊疗业务。",
+      "confidence": 0.92
+    },
+    {
+      "file": "2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+      "category": "a_requirements",
+      "origin_type": "agent_corpus",
+      "doc_category": "a_requirements",
+      "fields": {
+        "设备名称": "医用磁共振成像系统（多核）",
+        "设备类型": "高精尖（创新类）",
+        "申请科室": "放射科",
+        "申请数量": 1,
+        "申请金额": 4000.0,
+        "业务需求描述": "开展多核磁共振代谢成像用于临床诊断，提升精准医疗与复杂病例诊疗能力。",
+        "临床痛点": "缺乏无创、定量、早期评估代谢功能的影像工具，难以满足肿瘤、神经退行性疾病、心血管病等精准诊疗需求。",
+        "竞品品牌列表": [
+          "飞利浦MR 7700",
+          "西门子Cima.X+多核",
+          "GE Premier MAX+多核"
+        ],
+        "竞品参数对比": "飞利浦具备FDA/CE/NMPA多核认证、一站式扫描流程及标准化协议；西门子和GE均无完整认证，需额外操作且协议未成熟。",
+        "单次收费标准": null,
+        "月检查量": null,
+        "投入回收期": null
+      },
+      "summary": "申购多核MRI用于代谢成像，解决精准诊疗难题。",
+      "confidence": 0.96
+    },
+    {
+      "file": "e4e03fa1_SHA6PH-MR2026_预算清单.pdf",
+      "category": "a_requirements",
+      "origin_type": "user_upload",
+      "doc_category": "a_requirements",
+      "fields": {
+        "设备名称": "DSA+CT",
+        "设备类型": "医用专业设备",
+        "申请科室": "急诊医学科",
+        "申请数量": 1,
+        "申请金额": 1750,
+        "业务需求描述": null,
+        "临床痛点": null,
+        "竞品品牌列表": [
+          "联影"
+        ],
+        "竞品参数对比": null,
+        "单次收费标准": null,
+        "月检查量": null,
+        "投入回收期": null
+      },
+      "summary": "上海市六院2026年急诊医学科申请DSA+CT设备",
+      "confidence": 0.95
+    }
+  ],
+  "b_competitors": [
+    {
+      "file": "uMR 870彩页.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": null,
+        "型号": null,
+        "磁场强度": null,
+        "主要技术参数": null,
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "文档片段为空，无法抽取信息",
+      "confidence": 0.0
+    },
+    {
+      "file": "Copy of SIGNA_Performer彩页.pptx",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "GE医疗",
+        "型号": "SIGNA™ Performer",
+        "磁场强度": "3.0T",
+        "主要技术参数": "70 cm宽孔径扫描仪；配备电容触摸屏的室内12.1\"双显示屏；全身成像工作流程与足部先入扫描技术；深度学习工具嵌入系统核心架构",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "GE医疗SIGNA™ Performer 3.0T磁共振成像系统，具备先进成像与智能工作流。",
+      "confidence": 0.95
+    },
+    {
+      "file": "3. ElitionS 彩页.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "飞利浦",
+        "型号": "Ingenia Elition",
+        "磁场强度": null,
+        "主要技术参数": "光影零涡流梯度，70cm大孔径，静音系统，1分钟高清弥散成像（b值达10000），智能感知工作流",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "飞利浦Ingenia Elition磁共振具备零涡流梯度与智能工作流",
+      "confidence": 0.85
+    },
+    {
+      "file": "Lumina中文彩页-尚未获得广审-仅供内部使用.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "西门子",
+        "型号": "MAGNETOM Lumina",
+        "磁场强度": "3T",
+        "主要技术参数": "70cm大孔径、55cm最大FOV、180通道整机通道数、梯度性能提升25%、15倍梯度稳定性提高、GO 3D全息仿生成像平台、Turbo Suite超快速成像平台（最高20倍加速）、BioMatrix生命矩阵系统、TATS智能梯度系统",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "西门子MAGNETOM Lumina 3T磁共振，搭载BioMatrix与全息成像技术。",
+      "confidence": 0.95
+    },
+    {
+      "file": "uMR870推荐书 2025.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "联影",
+        "型号": "uMR 870",
+        "磁场强度": "3.0T",
+        "主要技术参数": "uAIFI Technology平台，DeepRecon智能深度重建，ACS智能光梭成像，EasySense智能感知技术，uDAS磁场感知，MoCap K空间运动监控",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "联影uMR 870为3.0T磁共振，搭载uAIFI智能技术平台。",
+      "confidence": 0.95
+    },
+    {
+      "file": "Mica 宣传彩页.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "西门子医疗",
+        "型号": "MAGNETOM Mica",
+        "磁场强度": null,
+        "主要技术参数": "远程5G磁共振大师、Quiet X静音扫描、去金属伪影成像、Turbo Suite快速扫描、工业4.0制造（焊接与测试机器人）",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "西门子MAGNETOM Mica支持5G远程协作与多项先进成像技术。",
+      "confidence": 0.92
+    },
+    {
+      "file": "03 Ambition彩页.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "Philips",
+        "型号": "Ingenia Ambition",
+        "磁场强度": "1.5T及以上",
+        "主要技术参数": "BlueSeal磁体，7升液氦微循环，0液氦消耗，0失超风险，一键升降场，无失超管，重量2.3吨",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "飞利浦Ingenia Ambition采用BlueSeal技术实现无液氦消耗与零失超风险。",
+      "confidence": 0.95
+    },
+    {
+      "file": "飞利浦Innovation  Ultra磁共振成像系统-申报材料.docx",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "飞利浦",
+        "型号": "Innovation Ultra",
+        "磁场强度": null,
+        "主要技术参数": "孔径70cm；磁体长度162cm；相控阵射频通道>256；梯度场强80mT/m；梯度切换率220T/m/s；双射频源（2×20KW）；Vital Eye人体感知系统；SmartSpace智能平台",
+        "含税报价": "1700万元/套",
+        "使用年限": null
+      },
+      "summary": "飞利浦Innovation Ultra磁共振系统技术参数及报价信息",
+      "confidence": 0.95
+    },
+    {
+      "file": "飞利浦Elition S医用磁共振成像系统-申报材料.docx",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "飞利浦",
+        "型号": "Ingenia Elition S",
+        "磁场强度": null,
+        "主要技术参数": "孔径70cm；磁体长度162cm；相控阵射频通道>256；梯度场强45mT/m；梯度切换率200T/m/s；双射频源（2×18KW）",
+        "含税报价": "1300万元/套",
+        "使用年限": "10年"
+      },
+      "summary": "飞利浦Elition S磁共振系统，含税价1300万，使用年限10年。",
+      "confidence": 0.95
+    },
+    {
+      "file": "MAGNETOM Lumina领域磁共振产品推荐书-2.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "西门子医疗",
+        "型号": "MAGNETOM Lumina",
+        "磁场强度": null,
+        "主要技术参数": "70cm大孔径磁体，0.01ppm/h磁场稳定性，55cm扫描视野，180通道一体化线圈，37.5kW射频峰值功率，零液氦挥发技术，AI智能双引擎，QuietSuite静音平台",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "西门子MAGNETOM Lumina AI磁共振主打节能智能与高效成像",
+      "confidence": 0.92
+    },
+    {
+      "file": "MAGNETOM Sempra_彩页_2025年1月14日.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": "西门子",
+        "型号": "MAGNETOM Sempra",
+        "磁场强度": "1.5T",
+        "主要技术参数": "Trueform智能磁体、Tim4G射频平台、数字聚能梯度系统、AI人工智能平台（含39种解剖识别模式）、DOT引擎、AutoAlign自动解剖识别及切层对齐、智能冷头启停、50%液氦填充稳定运行",
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "西门子MAGNETOM Sempra 1.5T AI磁共振，具备智能磁体与AI全自动扫描功能。",
+      "confidence": 0.95
+    },
+    {
+      "file": "uMR 660 探索1.5T推荐书.pdf",
+      "category": "b_competitors",
+      "origin_type": "agent_corpus",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": null,
+        "型号": "uMR 660",
+        "磁场强度": "1.5T",
+        "主要技术参数": null,
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "文档为uMR 660 1.5T磁共振设备推荐书，关键参数缺失。",
+      "confidence": 0.65
+    },
+    {
+      "file": "e4e03fa1_SHA6PH-MR2026_NMPA证.pdf",
+      "category": "b_competitors",
+      "origin_type": "user_upload",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": null,
+        "型号": null,
+        "磁场强度": null,
+        "主要技术参数": null,
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "文档片段仅列出设备类别，无具体字段信息",
+      "confidence": 0.1
+    },
+    {
+      "file": "e4e03fa1_SHA6PH-MR2026_价格依据证明.pdf",
+      "category": "b_competitors",
+      "origin_type": "user_upload",
+      "doc_category": "b_competitors",
+      "fields": {
+        "品牌": null,
+        "型号": null,
+        "磁场强度": null,
+        "主要技术参数": null,
+        "含税报价": null,
+        "使用年限": null
+      },
+      "summary": "文档片段仅含设备申请目录，无具体参数及报价信息。",
+      "confidence": 0.1
+    }
+  ],
+  "c_compliance": [
+    {
+      "file": "uMR 870注册证.pdf",
+      "category": "c_compliance",
+      "origin_type": "agent_corpus",
+      "doc_category": "c_compliance",
+      "fields": {
+        "注册证号": null,
+        "设备名称": null,
+        "生产企业": null,
+        "有效期": null,
+        "许可类别": null
+      },
+      "summary": "文档片段为空，无法抽取任何字段信息。",
+      "confidence": 0.0
+    },
+    {
+      "file": "杨浦区中心医院-乙类大型设备.docx",
+      "category": "c_compliance",
+      "origin_type": "agent_corpus",
+      "doc_category": "c_compliance",
+      "fields": {
+        "注册证号": null,
+        "设备名称": null,
+        "生产企业": null,
+        "有效期": null,
+        "许可类别": "乙类大型医用设备配置许可"
+      },
+      "summary": "杨浦区中心医院申请乙类大型医用设备配置许可",
+      "confidence": 0.85
+    },
+    {
+      "file": "Pilot Performer 国械注准20243061435.pdf",
+      "category": "c_compliance",
+      "origin_type": "agent_corpus",
+      "doc_category": "c_compliance",
+      "fields": {
+        "注册证号": "国械注准20243061435",
+        "设备名称": "Pilot Performer",
+        "生产企业": null,
+        "有效期": null,
+        "许可类别": null
+      },
+      "summary": "Pilot Performer医疗器械注册证信息",
+      "confidence": 0.6
+    },
+    {
+      "file": "国械注准20213060603-Lumina.pdf",
+      "category": "c_compliance",
+      "origin_type": "agent_corpus",
+      "doc_category": "c_compliance",
+      "fields": {
+        "注册证号": "国械注准20213060603",
+        "设备名称": null,
+        "生产企业": null,
+        "有效期": null,
+        "许可类别": null
+      },
+      "summary": "仅提供注册证号，其余信息缺失。",
+      "confidence": 0.5
+    },
+    {
+      "file": "e4e03fa1_SHA6PH-MR2026_论证纪要.pdf",
+      "category": "c_compliance",
+      "origin_type": "user_upload",
+      "doc_category": "c_compliance",
+      "fields": {
+        "注册证号": null,
+        "设备名称": null,
+        "生产企业": null,
+        "有效期": null,
+        "许可类别": null
+      },
+      "summary": "审议2026年医用设备预算及新优药械入院方案",
+      "confidence": 0.95
+    }
+  ],
+  "d_operations": [
+    {
+      "file": "MR维修记录2024-2026.xlsx",
+      "category": "d_operations",
+      "origin_type": "agent_corpus",
+      "doc_category": "d_operations",
+      "fields": {
+        "医院名称": null,
+        "单台日均服务量": null,
+        "工作饱和度": null,
+        "维修类型": null,
+        "维修费用": null,
+        "预算金额": null
+      },
+      "summary": "文档仅含地区维修次数汇总，无目标字段信息",
+      "confidence": 0.95
+    },
+    {
+      "file": "SHA6PH3.0TMRI绩效目标申报表.xlsx",
+      "category": "d_operations",
+      "origin_type": "user_upload",
+      "doc_category": "d_operations",
+      "fields": {
+        "医院名称": "上海交通大学医学院附属第六人民医院",
+        "单台日均服务量": 20,
+        "工作饱和度": null,
+        "维修类型": "计划外维修",
+        "维修费用": 12.8,
+        "预算金额": 1448
+      },
+      "summary": "第六人民医院采购3.0T MRI替换老旧设备，提升服务效率。",
+      "confidence": 0.95
+    },
+    {
+      "file": "改-附件2上海市市级财政项目预算绩效目标申报表（新华医院）-2026.3.31.xlsx",
+      "category": "d_operations",
+      "origin_type": "agent_corpus",
+      "doc_category": "d_operations",
+      "fields": {
+        "医院名称": "上海交通大学医学院附属新华医院",
+        "单台日均服务量": null,
+        "工作饱和度": null,
+        "维修类型": null,
+        "维修费用": null,
+        "预算金额": 6300
+      },
+      "summary": "新华医院2026年采购TOMO和PET/MR设备，预算6300万元。",
+      "confidence": 0.95
+    },
+    {
+      "file": "MR使用效率数据.xlsx",
+      "category": "d_operations",
+      "origin_type": "agent_corpus",
+      "doc_category": "d_operations",
+      "fields": {
+        "医院名称": "市中医医院",
+        "单台日均服务量": "62.56",
+        "工作饱和度": "67.95",
+        "维修类型": null,
+        "维修费用": null,
+        "预算金额": null
+      },
+      "summary": "市中医医院单台日均服务量62.56人次，工作饱和度67.95%。",
+      "confidence": 0.95
+    }
+  ],
+  "e_systems": [],
+  "f_validation": [
+    {
+      "file": "3.肺科.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "文档片段仅包含数字1至20，无有效字段信息。",
+      "confidence": 0.95
+    },
+    {
+      "file": "4.公卫.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "无有效字段可抽取",
+      "confidence": 0.0
+    },
+    {
+      "file": "5.瑞金.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "瑞金医院2026年度医用设备预算申报资料目录及设备清单",
+      "confidence": 0.95
+    },
+    {
+      "file": "6.新华.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "新华医院2026年拟购磁共振成像系统，预算800万元，已通过委员会审议。",
+      "confidence": 0.95
+    },
+    {
+      "file": "7.九院.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "九院2026年拟申请5台医用设备，总预算5750万元",
+      "confidence": 0.98
+    },
+    {
+      "file": "6_医学影像科新技术、新项目申报书（双源CT能谱成像肾结石成分分析）.docx",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "双源CT能谱成像肾结石成分分析项目申报",
+      "confidence": 0.95
+    },
+    {
+      "file": "2026年度万元以上设备预算申报论证表-夸克CT.docx",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "申报256排超高端CT用于心脏及肿瘤诊疗",
+      "confidence": 0.98
+    },
+    {
+      "file": "改-2026市级医院专业设备购置及更新（乙类）汇报（整体版）-2026.3.29.pptx",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "新华医院2026年乙类大型医疗设备采购项目汇报",
+      "confidence": 0.95
+    },
+    {
+      "file": "1.市一.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "无有效字段可抽取",
+      "confidence": 0.0
+    },
+    {
+      "file": "2.六院.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "上海市第六人民医院2026年拟申请11台专业设备，总预算9040万元。",
+      "confidence": 0.98
+    },
+    {
+      "file": "8.国妇幼.pdf",
+      "category": "f_validation",
+      "origin_type": "agent_corpus",
+      "doc_category": "f_validation",
+      "fields": {},
+      "summary": "国妇幼2026年度医用设备预算申报资料",
+      "confidence": 0.95
+    }
+  ]
+}

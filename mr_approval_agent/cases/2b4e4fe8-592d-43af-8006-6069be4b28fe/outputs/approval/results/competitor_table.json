@@ -1,0 +1,72 @@
+[
+  {
+    "brand": "GE医疗",
+    "model": "SIGNA™ Performer",
+    "field_strength": "3.0T",
+    "key_specs": "70 cm宽孔径扫描仪；配备电容触摸屏的室内12.1\"双显示屏；全身成像工作流程与足部先入扫描技术；深度学习工具嵌入系统核心架构",
+    "list_price_rmb": "",
+    "service_life_years": 0,
+    "market_share_note": "",
+    "source_file": "Copy of SIGNA_Performer彩页.pptx"
+  },
+  {
+    "brand": "飞利浦",
+    "model": "Ingenia Elition",
+    "field_strength": "3.0T",
+    "key_specs": "光影零涡流梯度，70cm大孔径，静音系统，1分钟高清弥散成像（b值达10000），智能感知工作流",
+    "list_price_rmb": "",
+    "service_life_years": 0,
+    "market_share_note": "",
+    "source_file": "3. ElitionS 彩页.pdf"
+  },
+  {
+    "brand": "联影",
+    "model": "uMR 870",
+    "field_strength": "3.0T",
+    "key_specs": "uAIFI Technology平台，DeepRecon智能深度重建，ACS智能光梭成像，EasySense智能感知技术，uDAS磁场感知，MoCap K空间运动监控",
+    "list_price_rmb": "",
+    "service_life_years": 0,
+    "market_share_note": "",
+    "source_file": "uMR870推荐书 2025.pdf"
+  },
+  {
+    "brand": "西门子医疗",
+    "model": "MAGNETOM Mica",
+    "field_strength": "3.0T",
+    "key_specs": "远程5G磁共振大师、Quiet X静音扫描、去金属伪影成像、Turbo Suite快速扫描、工业4.0制造（焊接与测试机器人）",
+    "list_price_rmb": "",
+    "service_life_years": 0,
+    "market_share_note": "",
+    "source_file": "Mica 宣传彩页.pdf"
+  },
+  {
+    "brand": "飞利浦",
+    "model": "Innovation Ultra",
+    "field_strength": "3.0T",
+    "key_specs": "孔径70cm；磁体长度162cm；相控阵射频通道>256；梯度场强80mT/m；梯度切换率220T/m/s；双射频源（2×20KW）；Vital Eye人体感知系统；SmartSpace智能平台",
+    "list_price_rmb": "17000000",
+    "service_life_years": 0,
+    "market_share_note": "",
+    "source_file": "飞利浦Innovation  Ultra磁共振成像系统-申报材料.docx"
+  },
+  {
+    "brand": "飞利浦",
+    "model": "Ingenia Elition S",
+    "field_strength": "3.0T",
+    "key_specs": "孔径70cm；磁体长度162cm；相控阵射频通道>256；梯度场强45mT/m；梯度切换率200T/m/s；双射频源（2×18KW）",
+    "list_price_rmb": "13000000",
+    "service_life_years": 10,
+    "market_share_note": "",
+    "source_file": "飞利浦Elition S医用磁共振成像系统-申报材料.docx"
+  },
+  {
+    "brand": "西门子医疗",
+    "model": "MAGNETOM Lumina",
+    "field_strength": "3.0T",
+    "key_specs": "70cm大孔径磁体，0.01ppm/h磁场稳定性，55cm扫描视野，180通道一体化线圈，37.5kW射频峰值功率，零液氦挥发技术，AI智能双引擎，QuietSuite静音平台",
+    "list_price_rmb": "",
+    "service_life_years": 0,
+    "market_share_note": "",
+    "source_file": "MAGNETOM Lumina领域磁共振产品推荐书-2.pdf"
+  }
+]

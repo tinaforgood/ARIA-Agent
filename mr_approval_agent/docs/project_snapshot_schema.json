@@ -1,0 +1,275 @@
+{
+  "_comment": "project_snapshot.json — dual-track schema example (v2, 双轨制)",
+  "_legend": {
+    "origin_type":  "'agent_corpus' = 静态知识底座 | 'user_upload' = 动态用户上传（优先）",
+    "doc_category": "逻辑类别键，与 CORPUS_CATEGORY_DIRS 对应",
+    "conflict":     "true 表示两个轨道（或同轨道内）提取到不同数值，需人工核对",
+    "all_values":   "所有原始来源的完整审计记录，不论哪个轨道最终胜出"
+  },
+
+  "generated_at": "2026-05-12 09:30:00",
+  "parser_mode":  "mineru",
+
+  "key_params": {
+
+    "device_name": {
+      "_type":      "ConflictableField",
+      "value":      "医用磁共振成像系统（3.0T）",
+      "origin_type": "user_upload",
+      "source_file": "01_requirements/3.0T磁共振配置可行性报告_v2.docx",
+      "doc_category": "a_requirements",
+      "conflict":    false,
+      "all_values": [
+        {
+          "value":        "医用磁共振成像系统（3.0T）",
+          "origin_type":  "user_upload",
+          "source_file":  "01_requirements/3.0T磁共振配置可行性报告_v2.docx",
+          "doc_category": "a_requirements"
+        },
+        {
+          "value":        "磁共振成像系统",
+          "origin_type":  "agent_corpus",
+          "source_file":  "a_requirements/需求报告-核磁共振成像系统.doc",
+          "doc_category": "a_requirements"
+        }
+      ]
+    },
+
+    "applicant_dept": {
+      "_type":       "ConflictableField",
+      "value":       "放射科",
+      "origin_type": "user_upload",
+      "source_file": "01_requirements/3.0T磁共振配置可行性报告_v2.docx",
+      "doc_category": "a_requirements",
+      "conflict":    false,
+      "all_values": [
+        {
+          "value":        "放射科",
+          "origin_type":  "user_upload",
+          "source_file":  "01_requirements/3.0T磁共振配置可行性报告_v2.docx",
+          "doc_category": "a_requirements"
+        }
+      ]
+    },
+
+    "revenue_params": {
+
+      "charge_per_exam": {
+        "_type":       "ConflictableField",
+        "_note":       "典型冲突示例：user_upload提供430元，agent_corpus旧文档记录460元",
+        "value":       "430元/次",
+        "origin_type": "user_upload",
+        "source_file": "01_requirements/2026年度万元以上设备预算申报论证表3.0T.docx",
+        "doc_category": "a_requirements",
+        "conflict":    true,
+        "all_values": [
+          {
+            "value":        "430元/次",
+            "origin_type":  "user_upload",
+            "source_file":  "01_requirements/2026年度万元以上设备预算申报论证表3.0T.docx",
+            "doc_category": "a_requirements"
+          },
+          {
+            "value":        "430元/次",
+            "origin_type":  "agent_corpus",
+            "source_file":  "a_requirements/2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+            "doc_category": "a_requirements"
+          },
+          {
+            "value":        "460元/次",
+            "origin_type":  "agent_corpus",
+            "source_file":  "a_requirements/设备申购报告表2022版-3T.doc",
+            "doc_category": "a_requirements"
+          }
+        ]
+      },
+
+      "monthly_volume": {
+        "_type":       "ConflictableField",
+        "value":       "1500人次/月",
+        "origin_type": "user_upload",
+        "source_file": "01_requirements/3.0T磁共振配置可行性报告_v2.docx",
+        "doc_category": "a_requirements",
+        "conflict":    false,
+        "all_values": [
+          {
+            "value":        "1500人次/月",
+            "origin_type":  "user_upload",
+            "source_file":  "01_requirements/3.0T磁共振配置可行性报告_v2.docx",
+            "doc_category": "a_requirements"
+          },
+          {
+            "value":        "1320人次/月",
+            "origin_type":  "agent_corpus",
+            "source_file":  "a_requirements/设备申购报告表2022版-3T.doc",
+            "doc_category": "a_requirements"
+          }
+        ]
+      },
+
+      "payback_period": {
+        "_type":       "ConflictableField",
+        "value":       "3-4年",
+        "origin_type": "agent_corpus",
+        "source_file": "a_requirements/设备申购报告表2022版-3T.doc",
+        "doc_category": "a_requirements",
+        "conflict":    false,
+        "all_values": [
+          {
+            "value":        "3-4年",
+            "origin_type":  "agent_corpus",
+            "source_file":  "a_requirements/设备申购报告表2022版-3T.doc",
+            "doc_category": "a_requirements"
+          }
+        ]
+      },
+
+      "_comment_backward_compat": "以下字段由 node_build_snapshot 在两轮遍历后自动从 ConflictableField 派生，供旧代码兼容读取",
+      "charge_conflict":     true,
+      "charge_per_exam_all": [
+        {
+          "value":        "430元/次",
+          "origin_type":  "user_upload",
+          "source_file":  "01_requirements/2026年度万元以上设备预算申报论证表3.0T.docx",
+          "doc_category": "a_requirements"
+        },
+        {
+          "value":        "430元/次",
+          "origin_type":  "agent_corpus",
+          "source_file":  "a_requirements/2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+          "doc_category": "a_requirements"
+        },
+        {
+          "value":        "460元/次",
+          "origin_type":  "agent_corpus",
+          "source_file":  "a_requirements/设备申购报告表2022版-3T.doc",
+          "doc_category": "a_requirements"
+        }
+      ]
+    },
+
+    "daily_utilization": {
+      "_type":       "ConflictableField",
+      "value":       "81%",
+      "origin_type": "agent_corpus",
+      "source_file": "d_operations/MR使用效率数据.xlsx",
+      "doc_category": "d_operations",
+      "conflict":    false,
+      "all_values": [
+        {
+          "value":        "81%",
+          "origin_type":  "agent_corpus",
+          "source_file":  "d_operations/MR使用效率数据.xlsx",
+          "doc_category": "d_operations"
+        }
+      ]
+    },
+
+    "competitor_list": [
+      {
+        "_type":       "CompetitorEntry",
+        "brand":       "飞利浦",
+        "model":       "Elition S",
+        "price":       "1300万元",
+        "magnetic_field": "3.0T",
+        "source":      "02_competitors/飞利浦Elition S报价单-2026Q1.xlsx",
+        "origin":      "b_competitors",
+        "origin_type": "user_upload",
+        "doc_category": "b_competitors"
+      },
+      {
+        "_type":       "CompetitorEntry",
+        "brand":       "飞利浦",
+        "model":       "Elition S",
+        "price":       null,
+        "magnetic_field": "3.0T",
+        "source":      "b_competitors/飞利浦Elition S医用磁共振成像系统-申报材料.docx",
+        "origin":      "b_competitors",
+        "origin_type": "agent_corpus",
+        "doc_category": "b_competitors"
+      },
+      {
+        "_type":       "CompetitorEntry",
+        "brand":       "联影",
+        "model":       "uMR 870",
+        "price":       "980万元",
+        "magnetic_field": "3.0T",
+        "source":      "b_competitors/uMR870推荐书 2025.pdf",
+        "origin":      "b_competitors",
+        "origin_type": "agent_corpus",
+        "doc_category": "b_competitors"
+      }
+    ],
+
+    "registration_certs": [
+      {
+        "cert_no":      "国械注准20243061435",
+        "device":       "磁共振成像系统",
+        "source":       "c_compliance/Pilot Performer 国械注准20243061435.pdf",
+        "origin_type":  "agent_corpus",
+        "doc_category": "c_compliance"
+      },
+      {
+        "cert_no":      "国械注准20213060603",
+        "device":       "MAGNETOM Lumina 磁共振成像系统",
+        "source":       "c_compliance/国械注准20213060603-Lumina.pdf",
+        "origin_type":  "agent_corpus",
+        "doc_category": "c_compliance"
+      }
+    ]
+  },
+
+  "excluded_non_mr": [
+    {
+      "file":        "a_requirements/50万元以上大型医疗设备预算申请表（含可行性报告1）.docx",
+      "device_name": "X射线计算机体层摄影设备",
+      "device_type": "CT",
+      "origin_type": "agent_corpus",
+      "reason":      "non-MR device detected — excluded from key_params"
+    }
+  ],
+
+  "excluded_internal_promo": [
+    {
+      "file":        "b_competitors/Lumina中文彩页-尚未获得广审-仅供内部使用.pdf",
+      "brand":       "西门子",
+      "origin_type": "agent_corpus",
+      "reason":      "internal / not ad-review approved"
+    }
+  ],
+
+  "reference_only_competitors": [
+    {
+      "brand":        "联影",
+      "model":        "uMR 660 探索",
+      "price":        null,
+      "magnetic_field": "1.5T",
+      "source":       "b_competitors/uMR 660 探索1.5T推荐书.pdf",
+      "origin_type":  "agent_corpus",
+      "doc_category": "b_competitors",
+      "reason":       "1.5T (or low-field) product — excluded from 3.0T comparison set"
+    }
+  ],
+
+  "missing_price_competitors": [
+    {
+      "brand":       "GE",
+      "model":       "SIGNA Hero",
+      "source":      "b_competitors/Copy of SIGNA_Performer彩页.pptx",
+      "origin_type": "agent_corpus",
+      "reason":      "含税报价字段为空或无效值"
+    }
+  ],
+
+  "_datasource_layout": {
+    "agent_corpus_root": "datasource/agent_corpus/",
+    "user_uploads_root": "datasource/user_uploads/",
+    "user_uploads_dirs": {
+      "01_requirements": "a_requirements",
+      "02_competitors":  "b_competitors",
+      "03_compliance":   "c_compliance",
+      "04_operations":   "d_operations"
+    },
+    "priority_rule": "user_upload > agent_corpus; conflict flagged when numeric values differ"
+  }
+}

@@ -1,0 +1,6 @@
+#!/Users/tina/Desktop/MriAgent/mr_approval_agent/.venv/bin/python
+import sys
+from pdftext.scripts.extract_text import extract_text_cli
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(extract_text_cli())

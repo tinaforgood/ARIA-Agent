@@ -1,0 +1,12 @@
+openpyxl
+langgraph
+pillow
+reportlab
+pypinyin
+mineru
+openai
+json-repair
+python-docx
+pdfplumber
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0

@@ -1,0 +1,17 @@
+{
+  "daily_volume_assumed": 20,
+  "working_days_per_year": 250,
+  "charge_per_exam_rmb": 800,
+  "insurance_ratio": 0.85,
+  "annual_revenue_rmb": 3400000,
+  "annual_operating_cost_rmb": 650000,
+  "annual_net_income_rmb": 2750000,
+  "payback_period_years": 5.85,
+  "roi_5yr_percent": 85.3,
+  "assumption_flags": [
+    "charge_per_exam_rmb",
+    "working_days_per_year",
+    "insurance_ratio"
+  ],
+  "notes": "日均服务量采用第六人民医院申报表中的20例；单次检查收费按上海市三级医院MRI平均自费+医保结算价估算为800元；年工作日按常规医疗设备运营假设为250天；医保报销比例参考上海地区大型公立医院平均水平设为85%。机房改造费用存在不确定性，但不影响年度运营收益测算。"
+}

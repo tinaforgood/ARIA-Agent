@@ -1,0 +1,28 @@
+{
+  "registration_certs": [
+    {
+      "cert_no": "国械注准20243061435",
+      "device_name": "Pilot Performer",
+      "manufacturer": "",
+      "valid_until": "",
+      "status": "unknown"
+    },
+    {
+      "cert_no": "国械注准20213060603",
+      "device_name": "Lumina",
+      "manufacturer": "",
+      "valid_until": "",
+      "status": "unknown"
+    }
+  ],
+  "class_b_license_status": "pending",
+  "price_proof_completeness": "incomplete",
+  "compliance_risks": [
+    "目标设备为'医用磁共振成像系统（多核）'，但所提供注册证对应设备名称为'Pilot Performer'和'Lumina'，未明确覆盖'多核'功能，型号匹配性存疑",
+    "注册证有效期信息缺失，无法确认是否在有效期内",
+    "乙类大型设备配置许可文件仅为申请文档（.docx），未提供正式获批证明，状态视为pending",
+    "缺少价格依据证明材料（如含税报价单、品牌型号明确的询价记录等），价格合规性无法验证"
+  ],
+  "overall_compliance": "conditional_pass",
+  "notes": "需补充目标设备与注册证型号的一致性说明、注册证有效期限页、乙类许可正式批复文件及完整的价格证明材料。当前因价格依据完整性预检缺失，已标记为conditional_pass。"
+}

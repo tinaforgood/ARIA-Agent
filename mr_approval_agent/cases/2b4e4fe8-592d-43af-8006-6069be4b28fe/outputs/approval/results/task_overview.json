@@ -1,0 +1,87 @@
+{
+  "run_timestamp": "2026-05-20T07:47:00Z",
+  "model": "qwen3-max",
+  "errors": [],
+  "human_checkpoints": [
+    {
+      "agent": "rationality_gate",
+      "item": "⚠️ 采购合理性判定：CONDITIONAL（部分维度不足或数据缺失）",
+      "action": "以下维度数据缺失，无法完整判定：waiting_time, positive_rate, device_age。请补充相关运营数据后重新评估。",
+      "conflict_type": "合理性条件通过"
+    },
+    {
+      "agent": "agent2_competitor",
+      "item": "竞品含税报价缺失：GE医疗 SIGNA™ Performer（来源：Copy of SIGNA_Performer彩页.pptx）",
+      "action": "请联系厂商获取正式含税报价单并更新 datasource/b_competitors 中对应文件"
+    },
+    {
+      "agent": "agent2_competitor",
+      "item": "竞品含税报价缺失：飞利浦 Ingenia Elition（来源：3. ElitionS 彩页.pdf）",
+      "action": "请联系厂商获取正式含税报价单并更新 datasource/b_competitors 中对应文件"
+    },
+    {
+      "agent": "agent2_competitor",
+      "item": "竞品含税报价缺失：联影 uMR 870（来源：uMR870推荐书 2025.pdf）",
+      "action": "请联系厂商获取正式含税报价单并更新 datasource/b_competitors 中对应文件"
+    },
+    {
+      "agent": "agent2_competitor",
+      "item": "竞品含税报价缺失：西门子医疗 MAGNETOM Mica（来源：Mica 宣传彩页.pdf）",
+      "action": "请联系厂商获取正式含税报价单并更新 datasource/b_competitors 中对应文件"
+    },
+    {
+      "agent": "agent2_competitor",
+      "item": "竞品含税报价缺失：西门子医疗 MAGNETOM Lumina（来源：MAGNETOM Lumina领域磁共振产品推荐书-2.pdf）",
+      "action": "请联系厂商获取正式含税报价单并更新 datasource/b_competitors 中对应文件"
+    },
+    {
+      "agent": "agent3_budget",
+      "item": "预算金额计算矛盾【CONF-001预防】：设备总金额计算有误：LLM给出单价13000000.0万×台数1应=17000000.0万，但 equipment_price_rmb=13000000.0万与竞品报价17000000.0万不符",
+      "action": "请人工核对预算清单中的单价、台数与总金额，确保 单价×台数=总金额",
+      "conflict_type": "预算总额核算矛盾"
+    },
+    {
+      "agent": "agent3_budget",
+      "item": "room_renovation_rmb: 机房改造费用无原始数据，估算区间为100万–150万元",
+      "action": "请核实并填写准确金额"
+    },
+    {
+      "agent": "agent4_revenue",
+      "item": "charge_per_exam_rmb",
+      "action": "请确认收益测算假设参数"
+    },
+    {
+      "agent": "agent4_revenue",
+      "item": "working_days_per_year",
+      "action": "请确认收益测算假设参数"
+    },
+    {
+      "agent": "agent4_revenue",
+      "item": "insurance_ratio",
+      "action": "请确认收益测算假设参数"
+    },
+    {
+      "agent": "agent6_document",
+      "item": "立项建议书全文",
+      "action": "请审阅 outputs/approval/results/project_document.docx（或 .md）；修改后可替换模板 templates/approval_proposal_template.docx 后重跑全流程"
+    }
+  ],
+  "rationality_verdict": "conditional",
+  "rationality_dimensions": {
+    "workload": "red",
+    "waiting_time": "unknown",
+    "positive_rate": "unknown",
+    "device_age": "unknown"
+  },
+  "rationality_recommendation": "以下维度数据缺失，无法完整判定：waiting_time, positive_rate, device_age。请补充相关运营数据后重新评估。",
+  "scores": {
+    "completeness": 7,
+    "data_accuracy": 6,
+    "compliance_coverage": 5,
+    "financial_rigor": 7,
+    "readability": 9
+  },
+  "total_score": 34,
+  "grade": "B",
+  "approval_recommendation": "建议补充材料后立项"
+}

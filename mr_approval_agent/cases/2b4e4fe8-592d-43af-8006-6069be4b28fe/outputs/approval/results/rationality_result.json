@@ -1,0 +1,46 @@
+{
+  "verdict": "conditional",
+  "renewal_exemption": false,
+  "dimensions": {
+    "workload": {
+      "score": "red",
+      "hospital_daily_volume": null,
+      "hospital_saturation": 67.95,
+      "hospital_work_hours": null,
+      "city_avg_daily_volume": 49.64,
+      "city_avg_saturation": 78.84,
+      "threshold_saturation_green": 90.0,
+      "threshold_saturation_yellow": 85.0,
+      "note": "工作饱和度 68.0%，市均 78.84%，综合性医院中位数 83.32%"
+    },
+    "waiting_time": {
+      "score": "unknown",
+      "hospital_waiting_days": null,
+      "city_avg_waiting_days": 4.7,
+      "city_avg_waiting_total": 5.5,
+      "threshold_green_days": 7.0,
+      "threshold_yellow_days": 5.5,
+      "note": "候检时间数据缺失（市均为 4.7天）"
+    },
+    "positive_rate": {
+      "score": "unknown",
+      "hospital_positive_rate": null,
+      "city_avg_not_available": true,
+      "threshold_red": 0.6,
+      "threshold_yellow": 0.7,
+      "data_available": false,
+      "note": "阳性率数据缺失，需补充（建议从医院HIS系统获取近12个月大型设备检查阳性率）"
+    },
+    "device_age": {
+      "score": "unknown",
+      "hospital_chengxin_rate": null,
+      "city_avg_chengxin_rate": 44.34,
+      "exemption_threshold": 30.0,
+      "exemption_triggered": false,
+      "note": "成新率数据缺失，无法判断是否为更新场景"
+    }
+  },
+  "blocking_reason": "",
+  "recommendation": "以下维度数据缺失，无法完整判定：waiting_time, positive_rate, device_age。请补充相关运营数据后重新评估。",
+  "benchmark_source": "2025年四季度上海市级医院综合绩效简报（总第71期）"
+}

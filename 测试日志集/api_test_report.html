@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MriAgent API 接口测试报告</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #1e293b; }
+  .header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: white; padding: 36px 48px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+  .header .subtitle { font-size: 14px; opacity: 0.8; }
+  .header .meta { margin-top: 16px; font-size: 13px; opacity: 0.75; display: flex; gap: 32px; flex-wrap: wrap; }
+  .container { max-width: 1200px; margin: 32px auto; padding: 0 24px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .card { background: white; border-radius: 12px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .card .val { font-size: 36px; font-weight: 700; line-height: 1; }
+  .card .lbl { font-size: 13px; color: #64748b; margin-top: 6px; }
+  .card.pass  .val { color: #22c55e; }
+  .card.fail  .val { color: #ef4444; }
+  .card.warn  .val { color: #f59e0b; }
+  .card.skip  .val { color: #94a3b8; }
+  .card.rate  .val { color: #2563eb; }
+  .card.time  .val { color: #7c3aed; font-size: 28px; }
+  .progress-bar { background: white; border-radius: 12px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 28px; }
+  .progress-bar .track { height: 12px; border-radius: 6px; background: #e2e8f0; overflow: hidden; margin-top: 12px; display: flex; }
+  .progress-bar .seg { height: 100%; transition: width .4s; }
+  .progress-bar .legend { display: flex; gap: 20px; margin-top: 10px; font-size: 13px; color: #64748b; flex-wrap: wrap; }
+  .progress-bar .legend span { display: flex; align-items: center; gap: 6px; }
+  .progress-bar .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 28px; font-size: 14px; }
+  thead tr { background: #f8fafc; }
+  th { padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid #e2e8f0; }
+  td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  .group-header td { background: #1e3a5f !important; padding: 8px 16px; }
+  .group-name { color: white; font-weight: 600; font-size: 13px; }
+  .group-stat { color: #93c5fd; font-size: 12px; margin-left: 12px; }
+  .tc-title { font-weight: 500; color: #1e293b; margin-bottom: 4px; }
+  .tc-path { display: flex; align-items: center; gap: 8px; }
+  .method-badge { color: white; font-size: 11px; font-weight: 600; padding: 2px 6px; border-radius: 4px; }
+  .status-badge { color: white; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .center { text-align: center; }
+  .note { color: #64748b; font-size: 13px; max-width: 260px; }
+  code { font-family: "SF Mono", Consolas, monospace; font-size: 13px; color: #334155; }
+  .detail-row td { padding: 0; }
+  .resp-pre { background: #1e293b; color: #e2e8f0; padding: 16px; font-size: 12px; overflow-x: auto; max-height: 280px; font-family: "SF Mono", Consolas, monospace; }
+  .toggle-btn { background: #e2e8f0; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; color: #475569; }
+  .toggle-btn:hover { background: #cbd5e1; }
+  .footer { text-align: center; padding: 24px; color: #94a3b8; font-size: 13px; }
+  @media (max-width: 768px) { .container { padding: 0 12px; } th, td { padding: 8px; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🔬 MriAgent API 接口测试报告</h1>
+  <div class="subtitle">ARIA 医疗设备采购立项智能体 · 后端 API 自动化测试</div>
+  <div class="meta">
+    <span>🌐 测试地址：http://120.55.247.187:8000</span>
+    <span>🕐 开始时间：2026-05-21 10:05:22</span>
+    <span>🕑 结束时间：2026-05-21 10:05:32</span>
+    <span>⏱ 总耗时：9983 ms</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="summary-grid">
+    <div class="card rate">
+      <div class="val">100.0%</div>
+      <div class="lbl">接口通过率</div>
+    </div>
+    <div class="card pass">
+      <div class="val">26</div>
+      <div class="lbl">通过</div>
+    </div>
+    <div class="card fail">
+      <div class="val">0</div>
+      <div class="lbl">失败</div>
+    </div>
+    <div class="card warn">
+      <div class="val">0</div>
+      <div class="lbl">警告</div>
+    </div>
+    <div class="card skip">
+      <div class="val">0</div>
+      <div class="lbl">跳过</div>
+    </div>
+    <div class="card time">
+      <div class="val">9983</div>
+      <div class="lbl">总耗时（ms）</div>
+    </div>
+  </div>
+
+  <div class="progress-bar">
+    <div style="font-weight:600; font-size:14px;">测试分布</div>
+    <div class="track">
+      <div class="seg" style="width:100.0%; background:#22c55e;"></div>
+      <div class="seg" style="width:0.0%; background:#f59e0b;"></div>
+      <div class="seg" style="width:0.0%; background:#ef4444;"></div>
+      <div class="seg" style="width:0.0%; background:#e2e8f0;"></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:#22c55e"></i>通过 26</span>
+      <span><i style="background:#f59e0b"></i>警告 0</span>
+      <span><i style="background:#ef4444"></i>失败 0</span>
+      <span><i style="background:#e2e8f0"></i>跳过 0</span>
+      <span>共 26 个测试用例</span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:30%">接口名称 / 路径</th>
+        <th class="center" style="width:8%">结果</th>
+        <th class="center" style="width:8%">实际状态码</th>
+        <th class="center" style="width:8%">预期状态码</th>
+        <th class="center" style="width:8%">响应耗时</th>
+        <th style="width:28%">备注</th>
+        <th class="center" style="width:10%">详情</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">基础连通性</span>
+            <span class="group-stat">1/1 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">健康检查</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/health</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">658 ms</td>
+          <td class="note">服务运行正常</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508355216')">响应</button></td>
+        </tr>
+        <tr id="detail_4508355216" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "ok": true,
+  "cases_dir": "/opt/mriagent/mr_approval_agent/cases"
+}</pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">Case管理</span>
+            <span class="group-stat">4/4 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">列出所有Case</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">242 ms</td>
+          <td class="note"></td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508358768')">响应</button></td>
+        </tr>
+        <tr id="detail_4508358768" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">[
+  {
+    "case_id": "c7a88a86-e40d-459b-b83d-f7fdc1fd5eae",
+    "hospital_name": "六院",
+    "created_at": "2026-05-18T07:31:14.945229+00:00",
+    "status": "done",
+    "ingest_started_at": "2026-05-18T07:47:20.909430+00:00",
+    "ingest_done_at": "2026-05-18T07:49:19.581783+00:00",
+    "approval_sta</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">新建Case</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">240 ms</td>
+          <td class="note">hospital_name + 初始状态 created</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508359872')">响应</button></td>
+        </tr>
+        <tr id="detail_4508359872" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "hospital_name": "测试医院_AutoTest",
+  "created_at": "2026-05-21T02:05:23.506964+00:00",
+  "status": "created",
+  "ingest_started_at": null,
+  "ingest_done_at": null,
+  "approval_started_at": null,
+  "approval_done_at": null,
+  "error": null,
+  "</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询Case详情</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">243 ms</td>
+          <td class="note">返回完整 metadata</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508361264')">响应</button></td>
+        </tr>
+        <tr id="detail_4508361264" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "hospital_name": "测试医院_AutoTest",
+  "created_at": "2026-05-21T02:05:23.506964+00:00",
+  "status": "created",
+  "ingest_started_at": null,
+  "ingest_done_at": null,
+  "approval_started_at": null,
+  "approval_done_at": null,
+  "error": null,
+  "</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">更新Case名称</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#f59e0b">PATCH</span>
+              <code>/api/cases/{case_id}</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">266 ms</td>
+          <td class="note">hospital_name 字段更新成功</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508362320')">响应</button></td>
+        </tr>
+        <tr id="detail_4508362320" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "hospital_name": "更新后医院名称_AutoTest",
+  "created_at": "2026-05-21T02:05:23.506964+00:00",
+  "status": "created",
+  "ingest_started_at": null,
+  "ingest_done_at": null,
+  "approval_started_at": null,
+  "approval_done_at": null,
+  "error": null,
+</pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">文件操作</span>
+            <span class="group-stat">5/5 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询文件列表（空）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/files</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">238 ms</td>
+          <td class="note">初始状态文件列表为空</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508360448')">响应</button></td>
+        </tr>
+        <tr id="detail_4508360448" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">分析PDF章节结构</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{case_id}/analyze</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">243 ms</td>
+          <td class="note">识别到 1 个章节，总页数 1</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508359392')">响应</button></td>
+        </tr>
+        <tr id="detail_4508359392" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "ok": true,
+  "total_pages": 1,
+  "sections": [
+    {
+      "pages": "第 1 页",
+      "start": 1,
+      "end": 1,
+      "item_id": "basic_info",
+      "category_name": "基本情况表",
+      "preview": "Test Page"
+    }
+  ]
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">精准上传文件</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{case_id}/upload</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">242 ms</td>
+          <td class="note">归入 basic_info / 基本情况表</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508360064')">响应</button></td>
+        </tr>
+        <tr id="detail_4508360064" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "ok": true,
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "item_id": "basic_info",
+  "category_name": "基本情况表",
+  "folder": "01_requirements",
+  "saved_as": "基本情况表_test.pdf",
+  "auto_classified": false
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询文件列表（上传后）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/files</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">235 ms</td>
+          <td class="note">已有分类: ['basic_info']</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508358240')">响应</button></td>
+        </tr>
+        <tr id="detail_4508358240" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "basic_info": {
+    "saved_as": "基本情况表_test.pdf",
+    "size_kb": 0,
+    "category_name": "基本情况表"
+  }
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">上传不支持格式（应返回415）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{case_id}/upload</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>415</code></td>
+          <td class="center"><code style="color:#6b7280">415</code></td>
+          <td class="center">237 ms</td>
+          <td class="note">不支持 .exe，正确拒绝</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508363952')">响应</button></td>
+        </tr>
+        <tr id="detail_4508363952" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "不支持的文件类型 .exe"
+}</pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">Agent流水线</span>
+            <span class="group-stat">3/3 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">触发Agent流水线</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{case_id}/run</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">243 ms</td>
+          <td class="note">后台异步启动，立即返回</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508365296')">响应</button></td>
+        </tr>
+        <tr id="detail_4508365296" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "ok": true,
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "message": "流水线已启动，请轮询 GET /api/cases/{case_id} 查看进度"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">重复触发（应返回409）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{case_id}/run</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>409</code></td>
+          <td class="center"><code style="color:#6b7280">409</code></td>
+          <td class="center">259 ms</td>
+          <td class="note">流水线运行中，正确拒绝重复触发</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508366496')">响应</button></td>
+        </tr>
+        <tr id="detail_4508366496" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "流水线已在运行中"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询Agent节点进度</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/agent-progress</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">243 ms</td>
+          <td class="note">Case状态: ingesting，进度: 0/7</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508367648')">响应</button></td>
+        </tr>
+        <tr id="detail_4508367648" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "case_status": "ingesting",
+  "hospital_name": "更新后医院名称_AutoTest",
+  "agents": [
+    {
+      "id": 1,
+      "label": "需求梳理",
+      "done": false,
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "label": "竞品归并",
+      "done": false,</pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">结果查询</span>
+            <span class="group-stat">5/5 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">获取快照（流水线前，应返回404）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/snapshot</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>404</code></td>
+          <td class="center"><code style="color:#6b7280">404</code></td>
+          <td class="center">236 ms</td>
+          <td class="note">ingest未完成，正确返回404</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508368656')">响应</button></td>
+        </tr>
+        <tr id="detail_4508368656" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "快照尚未生成，请先运行 /run 触发 ingest 流水线"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">合理性判定（流水线前，应返回404）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/rationality</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>404</code></td>
+          <td class="center"><code style="color:#6b7280">404</code></td>
+          <td class="center">238 ms</td>
+          <td class="note">流水线未完成，正确返回404</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508632208')">响应</button></td>
+        </tr>
+        <tr id="detail_4508632208" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "Not Found"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">任务概览（流水线前，应返回404）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/task_overview</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>404</code></td>
+          <td class="center"><code style="color:#6b7280">404</code></td>
+          <td class="center">245 ms</td>
+          <td class="note">流水线未完成，正确返回404</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508633168')">响应</button></td>
+        </tr>
+        <tr id="detail_4508633168" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "Not Found"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">下载立项建议书（流水线前，应返回404）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/{case_id}/document</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>404</code></td>
+          <td class="center"><code style="color:#6b7280">404</code></td>
+          <td class="center">246 ms</td>
+          <td class="note">文书未生成，正确返回404</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508634368')">响应</button></td>
+        </tr>
+        <tr id="detail_4508634368" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "立项建议书尚未生成，请等待流水线完成后再下载。"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">兼容旧快照接口</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/snapshot</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">260 ms</td>
+          <td class="note">返回最新 done Case 快照，keys: ['generated_at', 'parser_mode', 'categories', 'key_params']...</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508635520')">响应</button></td>
+        </tr>
+        <tr id="detail_4508635520" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "generated_at": "2026-05-18 15:49:19",
+  "parser_mode": "mineru",
+  "categories": {
+    "a_requirements": [
+      {
+        "file": "3.0T磁共振配置可行性报告.docx",
+        "category": "a_requirements",
+        "origin_type": "agent_corpus",
+        "doc_category": "a_requirements",
+        "fields": {
+  </pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">知识库管理</span>
+            <span class="group-stat">3/3 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询知识库文件列表</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/corpus</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">241 ms</td>
+          <td class="note">共 25 个文件｜{'a_requirements': 6, 'b_competitors': 12, 'c_compliance': 4, 'd_operations': 3}</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508636672')">响应</button></td>
+        </tr>
+        <tr id="detail_4508636672" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "dirs": {
+    "a_requirements": {
+      "title": "设备技术参数库",
+      "label": "技术规格",
+      "count": 6,
+      "files": [
+        {
+          "name": "2026年度万元以上设备预算申报论证表3.0T-20260113.docx",
+          "size_kb": 25,
+          "mtime": 1778570260.0,
+          "mtime_iso": "2026-05-12 15:17"
+        }</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">上传文件到知识库</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/corpus/upload</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">241 ms</td>
+          <td class="note">上传至 a_requirements（设备技术参数库）</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508637824')">响应</button></td>
+        </tr>
+        <tr id="detail_4508637824" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "ok": true,
+  "dir_id": "a_requirements",
+  "saved_as": "autotest_spec_20260521_100527.pdf",
+  "size_kb": 0
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">上传到无效目录（应返回400）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/corpus/upload</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>400</code></td>
+          <td class="center"><code style="color:#6b7280">400</code></td>
+          <td class="center">285 ms</td>
+          <td class="note">无效 dir_id，正确拒绝</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508639168')">响应</button></td>
+        </tr>
+        <tr id="detail_4508639168" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "未知知识库目录: invalid_dir"
+}</pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">错误处理</span>
+            <span class="group-stat">3/3 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询不存在的Case（应返回404）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/cases/not-exist-000</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>404</code></td>
+          <td class="center"><code style="color:#6b7280">404</code></td>
+          <td class="center">534 ms</td>
+          <td class="note">case_id 不存在，正确返回404</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508367600')">响应</button></td>
+        </tr>
+        <tr id="detail_4508367600" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "case_id=not-exist-000 不存在"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">无材料触发流水线（应返回422）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{empty_id}/run</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>422</code></td>
+          <td class="center"><code style="color:#6b7280">422</code></td>
+          <td class="center">538 ms</td>
+          <td class="note">无文件时触发流水线，正确返回422</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508365968')">响应</button></td>
+        </tr>
+        <tr id="detail_4508365968" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "尚未上传任何材料，请先完成文件上传"
+}</pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">删除运行中的Case（应返回409）</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#ef4444">DELETE</span>
+              <code>/api/cases/{case_id}</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>409</code></td>
+          <td class="center"><code style="color:#6b7280">409</code></td>
+          <td class="center">242 ms</td>
+          <td class="note">流水线运行中，正确拒绝删除</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508355552')">响应</button></td>
+        </tr>
+        <tr id="detail_4508355552" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "detail": "流水线运行中，无法删除，请等待完成后再操作。"
+}</pre></td></tr>
+        <tr class="group-header">
+          <td colspan="7">
+            <span class="group-name">PDF拆分</span>
+            <span class="group-stat">2/2 通过</span>
+          </td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">PDF拆分任务</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#22c55e">POST</span>
+              <code>/api/cases/{case_id}/split</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">324 ms</td>
+          <td class="note">job_id=874fd26c...，拆分 1 个文件</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508358192')">响应</button></td>
+        </tr>
+        <tr id="detail_4508358192" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "ok": true,
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "job_id": "874fd26c-2102-4126-89b9-003ea0319591",
+  "original_saved": "originals/874fd26c-2102-4126-89b9-003ea0319591/test.pdf",
+  "manifest": "originals/874fd26c-2102-4126-89b9-003ea0319591/manifest.json",
+  "files": [
+    {
+   </pre></td></tr>
+        <tr style="background:#f0fdf4">
+          <td class="tc-name">
+            <div class="tc-title">查询拆分任务Manifest</div>
+            <div class="tc-path">
+              <span class="method-badge" style="background:#3b82f6">GET</span>
+              <code>/api/jobs/{job_id}</code>
+            </div>
+          </td>
+          <td class="center"><span class="status-badge" style="background:#22c55e">通过</span></td>
+          <td class="center"><code>200</code></td>
+          <td class="center"><code style="color:#6b7280">200</code></td>
+          <td class="center">273 ms</td>
+          <td class="note">manifest 包含原始文件信息与拆分结果</td>
+          <td class="center"><button class="toggle-btn" onclick="toggle('detail_4508360832')">响应</button></td>
+        </tr>
+        <tr id="detail_4508360832" class="detail-row" style="display:none"><td colspan="7"><pre class="resp-pre">{
+  "job_id": "874fd26c-2102-4126-89b9-003ea0319591",
+  "case_id": "c180b502-42d5-49ea-8ed6-dd836529ea81",
+  "original_file": "test.pdf",
+  "uploaded_at": "2026-05-21T02:05:30.729253+00:00",
+  "total_pages": 1,
+  "sections": [
+    {
+      "item_id": "basic_info",
+      "category_name": "基本情况表",
+    </pre></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  MriAgent API 测试报告 · 生成时间 2026-05-21 10:05:32 · 自动化测试脚本 v1.0
+</div>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'none' ? 'table-row' : 'none';
+}
+</script>
+</body>
+</html>

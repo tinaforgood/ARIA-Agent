@@ -1,0 +1,6 @@
+冲突ID,冲突类型,文档A,字段A,值A,origin_type_A,文档B,字段B,值B,origin_type_B,预期检出
+CONF-001,预算总额超标,预算清单,MR设备申请总金额,2600万,user_uploads,基本情况表,2026年拟申请专业设备总额,9040万,user_uploads,是
+CONF-002,设备台数与需求冲突,预算清单,现有MR设备数量（徐汇）,11台,user_uploads,agent_corpus历史均值,三级甲等医院MR配置均值,4台,agent_corpus,是
+CONF-003,参数矛盾（双院区同型号）,预算清单_临港,申请设备型号,uMR870pro,user_uploads,预算清单_徐汇,申请设备型号,uMR870pro,user_uploads,否
+CONF-004,论证会出席合规验证,论证纪要,应到委员数,33,user_uploads,论证纪要,实到委员数,25,user_uploads,否
+CONF-005,资质内容不完整,预算清单,价格依据类型,询价单,user_uploads,价格依据证明PDF,OCR提取关键字段,品牌/型号/含税报价/日期均缺失（OCR仅读到页码）,user_uploads,是

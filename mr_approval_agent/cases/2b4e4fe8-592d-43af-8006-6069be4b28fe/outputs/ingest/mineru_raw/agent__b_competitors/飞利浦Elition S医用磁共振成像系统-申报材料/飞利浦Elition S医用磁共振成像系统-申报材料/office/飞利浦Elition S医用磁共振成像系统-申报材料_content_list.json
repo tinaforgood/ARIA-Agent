@@ -1,0 +1,216 @@
+[
+    {
+        "type": "text",
+        "text": "Philips Elition光影磁共振",
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "table_caption": [],
+        "table_body": "<table><tr><td><p>设备名称</p></td><td><p>数量</p></td><td><p>设备报价</p><p>/台(套)</p></td><td><p>询价后价格</p><p>/台(套)</p></td><td><p>设备生产厂商全称</p></td><td><p>是否获授权</p></td><td><p>报价厂商全称</p></td><td><p>报价有效期</p></td></tr><tr><td><p>Ingenia Elition S</p></td><td><p>1</p></td><td><p>1300万元/套</p></td><td><p>1300万元/套</p></td><td><p>飞利浦医疗（苏州）有限公司</p></td><td><p>是</p></td><td><p>飞利浦（中国）投资有限公司</p></td><td><p>六个月</p></td></tr></table>",
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f692bafb2064c1e32c24c3e7fd52ec4d2410130d03c1f69b334778e1613dd30.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- Ingenia Elition S技术参数："
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "table_caption": [],
+        "table_body": "<table><tr><td><p><strong>序号</strong></p></td><td><p><strong>参数名称</strong></p></td><td><p><strong>参数值</strong></p></td><td><p><strong>临床优势</strong></p></td></tr><tr><td><p>1</p></td><td><p>孔径</p></td><td><p>70cm</p></td><td><p>大孔径设计显著提升患者舒适度，减少幽闭恐惧感；便于肥胖患者、脊柱侧弯患者及需携带监护设备的重症患者检查；为介入操作和放疗定位提供充足空间，拓展临床应用范围</p></td></tr><tr><td><p>2</p></td><td><p>磁体长度（不含外壳）</p></td><td><p>162cm</p></td><td><p>短磁体设计大幅降低患者头端入磁体深度，显著减轻幽闭焦虑；提升头颈、脊柱等远端部位扫描的舒适性；便于儿童及老年患者配合，减少镇静需求；短磁体结构更利于科室空间布局与设备维护</p></td></tr><tr><td><p>3</p></td><td><p>相控阵射频同时并行接收独立通道数</p></td><td><p>全数字独立无限通道（&gt;256）</p></td><td><p>磁共振档次定位金标准，通道数越高越好。&gt;256通道实现超高并行采集加速，大幅缩短扫描时间；支持超高密度线圈，提升全身各部位信噪比与分辨率；目前科研型3.0T磁共振必须在128通道以上，是高端科研与精准临床诊断的核心硬件基础</p></td></tr><tr><td><p>4</p></td><td><p>梯度场强</p></td><td><p>45mT/m</p></td><td rowspan=\"2\"><p>零涡流梯度系统，满足神经、肿瘤、心脏等学科的精准诊断需求。光影零涡流梯度拥有业界最高的梯度线性度，从而为大范围成像、偏中心成像提供了强大的硬件保障。相比传统梯度，光影零涡流梯度实现了信噪比40%的提升，前所未有地实现了更高清的弥散成像。</p></td></tr><tr><td><p>5</p></td><td><p>梯度切换率</p></td><td><p>200T/m/s</p></td></tr><tr><td><p>6</p></td><td><p>射频源个数</p></td><td><p>2个</p></td><td rowspan=\"3\"><p>两个独立射频源可同时工作，实时个性化调节射频场，改善体部心脏图像，是超高场3T必备。</p><p>搭载了独有的MultiTransmit 4D四维多源发射技术，不仅是真正的多源射频发射技术，显著提升图像质量及扫描的安全性，而且能实现运动器官成像的动态射频调节，将3.0T运动器官（如心脏成像）带入全新时代。</p></td></tr><tr><td><p>7</p></td><td><p>射频放大器个数</p></td><td><p>2个</p></td></tr><tr><td><p>8</p></td><td><p>射频最大功率</p></td><td><p>2×18KW</p></td></tr></table>",
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- 临床效果："
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "基于dStream全数字无限通道射频系统、革新的零涡流梯度系统、精准双源射频系统、短轻磁体大孔径平台、高阶匀场等超高硬件基础，再搭载2D/3D压缩感知平台，可实现临床科研的极限突破：最高25000b值弥散、最高1024方向的DTI成像、最快18秒不打药冠脉成像、3DAPT酰胺质子转移成像等等突破。",
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- 经济学价值："
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1.使用年限：10年",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2.仪器设备的检测项目工作量及收费标准：",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "项目名称：磁共振扫描",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "每月工作量：2400人（80x30）",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "每个人次扫描所需平均时间：9分钟",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "收费标准：430元/人",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "3.年经济收入：约1240万元",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "4.年维修费用估计：120万元",
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- 参数对比表："
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/38c7277ddcec797028ddbc4af477f91b8071c46eaee0a3e785f60ff4730b408f.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/d691144f47e135347d4ba68a9d5e2604d2266189631d376cfe48d073c84e63e3.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/c7c31320189e4c2b6b8c1cde604e3a27202e8da873fe33c9900cff1013276d35.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/1d589a1e29291bd32b224fce43d3f930178bdd8d8eb5b9ef43d7b467b5cea2ba.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/2ed9f49c82b99f54ea1b6cce5f96e9f44c5eaadb951dd843623942ac02eefa22.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/fffbf912ec1e0907fbc43dcf8e9fe824939cd19e8b557293f3f09381f1d86b72.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/ae4a780b2c049bbee8e6aea4c7e0afa57c9fdfc13cd5592fd375d695e3405d4d.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/8d941c927bb5b210bc99c3196f85d1857fdcca4502e2a5438164a8a3901300b4.jpg",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- 注册证"
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/8bf8ce1fa3d848a2e7db3b1be6df9ce10ac3342b56d04cd6b24f5c12b214c2d4.png",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "table_caption": [],
+        "table_body": "<table><tr><td><p><strong>飞利浦Elition光影磁共振</strong></p></td><td></td></tr><tr><td><p><strong>主要特点：</strong></p><ol><li><strong>零涡流梯度系统：重新定义梯度性能</strong> </li></ol><p>采用传承于荷兰ASML光刻机的高精度水刀切割工艺，以反应堆级无氧黄金铜材质配合基底冷却技术，实现分割精度＜0.1mm（传统梯度100倍提升）。彻底消除涡流伪影，信噪比提升40%，同时具备业界最高的梯度线性度，为大范围成像和偏中心成像提供硬件保障，实现更高清的神经弥散和体部成像。</p><ol><li><strong>MultiTransmit 4D四维多源发射技术</strong> </li></ol><p>作为超高端3T必备技术，采用2个独立射频放大器实现14个维度动态自由调节，根本消除高场磁共振介电阴影，有效降低局部SAR值。相比西门子Vida（标配单源/选配双源）和GE Premier，飞利浦独有的实时动态双射频源调节技术显著提升脂肪抑制效果、信噪比与对比度，特别有利于心脏等运动器官成像及偏中心部位扫描。</p><ol><li><strong>dStream全数字平台：无限射频接收通道</strong> </li></ol><p>搭载独有的全数字射频接收技术，摆脱主机通道数限制，实现无限通道独立接收能力。无需任何硬件升级即可任意连接高通道数线圈，为未来临床与科研拓展提供无限平台，相比西门子Vida（标配64/选配128通道）和GE Premier（146通道）具备更高的可拓展性。</p><ol><li><strong>1分钟极速精准成像：三大临床诊疗新模式</strong></li></ol><ul><li><strong>脑卒中</strong>：36秒完成10000 b值超高b值弥散成像，1分钟超快速卒中方案；独有3D APT酰胺质子转移成像技术（已获FDA及NMPA双认证，2024年11月纳入国家医保单独收费）</li><li><strong>肿瘤筛查</strong>：独家冠状位类PET每站＜20秒，5个腹部序列仅需1分14秒；APT技术实现肿瘤分子代谢成像，精准分级与疗效评价</li><li><strong>无创冠脉（独家）</strong>：全心冠脉扫描缩短至1分钟内，心脏整体方案从50分钟降至25分钟；2021年中放冠脉专家共识基于飞利浦平台制定，2024年11月冠脉成像纳入医保单独收费</li></ul><ol><li><strong>1分钟智能感知工作流</strong> </li></ol><p>搭载AI智能平台，通过磁体旁智能交互系统实现无激光灯精准摆位，1分钟内完成患者定位至扫描启动。后续流程全自动完成：解剖识别、定位规划、参数调整、语音提醒、图像重建及后处理。该工作流荣获2021年德国IF设计奖、红点设计奖及2020年伦敦设计大奖金奖，显著提升操作效率与患者流通量。</p></td><td><p><img src=\"images/00d641dc52eaaa32f54ebaaba32cb3b070dada4d1071656f9e2da93761e52163.png\"/></p><p><strong>产品名称：Ingenia Elition S</strong></p><p><strong>拿证时间：2022年12月</strong></p></td></tr><tr><td colspan=\"2\"><p>较同类产品优势</p><p>飞利浦Elition光影与西门子大Vida XT、GE Premier、联影Omega处于同一档次</p><ol><li>这三款产品都是70厘米以上孔径，但飞利浦磁体更短、更轻，扫描体验感更舒适；</li><li>双源射频：Elition<sup> </sup>、Premier 和Omega具备双源发射技术，Vida真正的双源技术TrueShape是选配（区别于单源技术Trueform），易超SAR，有灼伤风险和干扰工作进度；相比西门子Vida（标配单源/选配双源）和GE Premier，飞利浦独有的实时动态双射频源调节技术显著提升脂肪抑制效果、信噪比与对比度，特别有利于心脏等运动器官成像及偏中心部位扫描。</li><li>射频接收128通道以上：飞利浦提供dStream全数字平台无限射频接收通道，相比西门子Vida（标配64/选配128通道）和GE Premier（146通道）具备更高的可拓展性。</li><li>智能工作流：搭载AI智能平台，通过磁体旁智能交互系统实现无激光灯精准摆位，1分钟内完成患者定位至扫描启动。后续流程全自动完成：解剖识别、定位规划、参数调整、语音提醒、图像重建及后处理。其他厂家产品无；</li><li>智能深度学习加速技术：飞利浦CS 2.0压缩感知技术可适用于2D/3D/4D等全成像序列，加速因子高达32倍；其他厂商加速技术如Resolve、DL、ACS等有序列限制，部分仅支持2D序列。</li><li>其他高级功能：飞利浦独有3D APT（NMPA认证）、18秒不打药冠脉成像、不打药高清神经根成像等都是其他厂家不具备的。</li></ol></td></tr></table>",
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- 近2年同规格型号设备中标通知书或合同、发票复印件等询价证明材料"
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/c2215200bafc5d37d530fb3ac1c9aa563158a84122317c79bb4c4d6800d8ec74.png",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/3e16f6f93790753d82c63e8f4a5fdf180fc08e3f45d219ca974139f453b75bff.png",
+        "image_caption": [],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "list_items": [
+            "- 推荐配置："
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "-3DAPT成像（代谢成像，独家NMPA获批）",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "-不打药冠脉成像（独家技术）",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "-无创心肌定量成像（T1/T2/T2\\*mapping）",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "-压缩感知2D/3D成像加速技术",
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "-Multitransmit4D多源射频发射技术",
+        "page_idx": 0
+    }
+]
